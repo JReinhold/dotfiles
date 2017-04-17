@@ -11,9 +11,9 @@ brew update
 ./clis.sh
 ./apps.sh
 ./node.sh
-./settings.sh
 ./aliases.sh
 ./functions.sh
+./settings.sh
 
 cp .editorconfig ~/.editorconfig
 cp .gitignore ~/.gitignore
