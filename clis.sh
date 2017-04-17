@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 #######################################
 # CLI-SETOUP
 # Installs CLI-tools

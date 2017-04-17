@@ -1,3 +1,15 @@
+#!/usr/bin/env bash
+
+# Install function, with notification support
+# first parameter is app to install
+caski () {
+	if brew cask install $1 ; then
+		terminal-notifier -message "$1 installed successfully 🎉🎈" -title "🍺 Cask Install" -sound default -timeout 10
+	else
+		printf "FAILED: $1\n" >> ~/Desktop/appList.txt
+		terminal-notifier -message " ⛔️ $1 INSTALLATION FAILED" -title "⚠️  Cask Install" -sound default -timeout 10
+	fi
+}
 
 ########################################
 # CASK INSTALLS
@@ -18,6 +30,7 @@ caski font-fira-code
 
 #Visual Studio Code - Lightweight editor
 caski visual-studio-code
+./vscode.sh #setup settings and extensions on first launch
 
 #Alfred - Launcher - NEEDS LICENCE
 caski alfred
