@@ -1,103 +1,90 @@
-#!/usr/bin/env bash
+#!/usr/local/bin/fish
+
+#function to create an alias and immediately save it
+function salias -d "create and save alias, 1st arg alias_name, 2nd arg command"
+	alias $argv[1]=$argv[2]
+	funcsave $argv[1]
+end
+funcsave salias
 
 # Easier navigation: .., ..., ...., ....., ~ and -
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
-alias -- -="cd -"
+salias .. "cd .."
+salias ... "cd ../.."
+salias .... "cd ../../.."
+salias ..... "cd ../../../.."
 
 # Shortcuts
-alias dl="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/Downloads"
-alias ldl="cd ~/Downloads"
-alias dt="cd ~/Desktop"
-alias dev="cd ~/dev"
+salias dl "cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/Downloads"
+salias ldl "cd ~/Downloads"
+salias dt "cd ~/Desktop"
+salias dev "cd ~/dev"
 
 # List all files colorized in long format
-alias l="ls -Apho"
-
-# Enable aliases to be sudo’ed
-alias sudo='sudo '
+salias l "ls -Apho"
 
 # Get week number
-alias week='date +%V'
+salias week 'date +%V'
 
 # Stopwatch
-alias timer='echo "Timer started. Stop with Ctrl-D."; and date; and time cat; and date'
+salias timer 'echo "Timer started. Stop with Ctrl-D."; and date; and time cat; and date'
 
 # Get macOS Software Updates, and update Homebrew, npm, and their installed packages
-alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g'
+salias update 'sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g'
 
 # Google Chrome
-alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
+salias chrome '/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
+# Google Chrome Incognito mode
+salias chromei '/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --incognito'
 
 # IP addresses
-alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
-alias localip="ipconfig getifaddr en0"
-alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
+salias ip "dig +short myip.opendns.com @resolver1.opendns.com"
+salias localip "ipconfig getifaddr en0"
+salias ips "ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 
 # Show active network interfaces
-alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'"
+salias ifactive "ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'"
 
 # Clean up LaunchServices to remove duplicates in the “Open With” menu
-alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
-
-# View HTTP traffic
-alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
-alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
-
-# macOS has no `md5sum`, so use `md5` as a fallback
-command -v md5sum > /dev/null || alias md5sum="md5"
-
-# macOS has no `sha1sum`, so use `shasum` as a fallback
-command -v sha1sum > /dev/null || alias sha1sum="shasum"
+salias lscleanup "/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user; and killall Finder"
 
 # Trim new lines and copy to clipboard
-alias c="tr -d '\n' | pbcopy"
+salias c "tr -d '\n' | pbcopy"
 
 # Recursively delete `.DS_Store` files
-alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
+salias cleanup "find . -type f -name '*.DS_Store' -ls -delete"
 
 # Empty the Trash on all mounted volumes and the main HDD.
 # Also, clear Apple’s System Logs to improve shell startup speed.
 # Finally, clear download history from quarantine. https://mths.be/bum
-alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
+salias emptytrash "sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/Library/Mobile\ Documents/com~apple~CloudDocs/.Trash; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
 
 # Show/hide hidden files in Finder
-alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
-alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+salias show "defaults write com.apple.finder AppleShowAllFiles -bool true; and killall Finder"
+salias hide "defaults write com.apple.finder AppleShowAllFiles -bool false; and killall Finder"
 
 # Hide/show all desktop icons (useful when presenting)
-alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
-alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+salias hidedesktop "defaults write com.apple.finder CreateDesktop -bool false; and killall Finder"
+salias showdesktop "defaults write com.apple.finder CreateDesktop -bool true; and killall Finder"
 
 # Merge PDF files
 # Usage: `mergepdf -o output.pdf input{1,2,3}.pdf`
-alias mergepdf='/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/Resources/join.py'
+salias mergepdf '/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/Resources/join.py'
 
 # Disable Spotlight
-alias spotoff="sudo mdutil -a -i off"
+salias spotoff "sudo mdutil -a -i off"
 # Enable Spotlight
-alias spoton="sudo mdutil -a -i on"
-
-# One of @janmoesen’s ProTip™s
-for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
-	alias "$method"="lwp-request -m '$method'"
-done
+salias spoton "sudo mdutil -a -i on"
 
 # Stuff I never really use but cannot delete either because of http://xkcd.com/530/
-alias stfu="osascript -e 'set volume output muted true'"
-alias pumpitup="osascript -e 'set volume output volume 100'"
+salias stfu "osascript -e 'set volume output muted true'"
+salias pumpitup "osascript -e 'set volume output volume 100'"
 
 # Kill all the tabs in Chrome to free up memory
 # [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
-alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
+salias chromekill "ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
 
 # Lock the screen (when going AFK)
-alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+salias afk "open -a ScreenSaverEngine"
 
 # Reload the shell (i.e. invoke as a login shell)
-alias reload="exec $SHELL -l"
-
-# Print each PATH entry on a separate line
-alias path='echo -e ${PATH//:/\\n}'
+salias reload "exec $SHELL -l"

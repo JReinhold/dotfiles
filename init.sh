@@ -9,11 +9,11 @@ brew update
 
 #Run install scripts
 ./clis.sh
-./functions.sh
 ./apps.sh
 ./node.sh
 ./settings.sh
 ./aliases.sh
+./functions.sh
 
 cp .editorconfig ~/.editorconfig
 cp .gitignore ~/.gitignore
