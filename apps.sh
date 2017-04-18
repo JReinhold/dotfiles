@@ -115,6 +115,9 @@ caski dropbox
 #Google Drive - Cloud storage app
 caski google-drive
 
+#Microsoft Office 2016
+caski microsoft-office
+
 ########################################
 # MAC APP STORE INSTALLS
 ########################################
