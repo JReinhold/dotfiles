@@ -291,9 +291,6 @@ defaults write com.apple.dock mru-spaces -bool false
 # Disable Dock magnification on hover
 defaults write com.apple.dock magnification -bool false
 
-# Make Dock icons of hidden applications translucent
-defaults write com.apple.dock showhidden -bool true
-
 # Disable the Launchpad gesture (pinch with thumb and three fingers)
 defaults write com.apple.dock showLaunchpadGestureEnabled -int 0
 
