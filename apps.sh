@@ -83,10 +83,11 @@ caski openconnect-gui
 #JDK - Java Development Kit, needed for Android SDK
 caski java
 
-#Android SDK
-caski android-sdk
-export ANDROID_HOME=/usr/local/share/android-sdk
-export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+#Android Studio
+caski android-studio
+export ANDROID_HOME=${HOME}/Library/Android/sdk
+export PATH=${PATH}:${ANDROID_HOME}/tools
+export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 
 #Arduino IDE
 caski arduino

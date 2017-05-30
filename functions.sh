@@ -28,3 +28,6 @@ function o -d "Opens current dir or 1st argument in Finder, creates it if it doe
 	end
 end
 funcsave o
+
+# 'gi' function to use gitignore.io API
+printf "function gi\n\tcurl -L -s https://www.gitignore.io/api/\$argv\nend\n" > ~/.config/fish/functions/gi.fish

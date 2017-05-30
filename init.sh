@@ -16,8 +16,8 @@ brew update
 ./settings.sh
 
 cp .editorconfig ~/.editorconfig
-cp .gitignore ~/.gitignore
-git config --global core.excludesfile '~/.gitignore'
+cp .gitignore ~/.gitignore_global
+git config --global core.excludesfile '~/.gitignore_global'
 
 ########################################
 # FINALS
