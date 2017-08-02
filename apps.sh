@@ -44,6 +44,12 @@ caski hyperdock
 #iStat Menus - Hardware Monitor - NEEDS LICENSE
 caski istat-menus
 
+#Spectacle - Better window resizer and mover
+caski spectacle
+
+#Contexts - Better CMD+TAB
+caski contexts
+
 #Wavebox - Single app for multiple web accounts, Inbox, Google Drive, Slack, etc.
 caski wavebox
 
@@ -63,7 +69,7 @@ caski skype
 caski toggldesktop
 
 #Microsoft Office 2016
-caski microsoft-office
+#caski microsoft-office
 
 #Figma - Webbased vector app
 caski figma
@@ -102,7 +108,7 @@ caski transmission
 caski vlc
 
 #Framer.js - prototyping app
-caski framer
+#caski framer
 
 #Keka - Archive manager (zip, rar, dmg, etc.)
 caski keka
@@ -110,14 +116,20 @@ caski keka
 #Handbrake - media encoder
 caski handbrake
 
+#Docker - VM and container handler
+caski docker
+
+#Android File Transfer - transfer files to a cabled android device
+caski android-file-transfer
+
 #NoSleep - System Utility to toggle wether mac sleeps
 caski nosleep
 
 #DropBox - Cloud storage app
-caski dropbox
+#caski dropbox
 
 #Google Drive - Cloud storage app
-caski google-drive
+#caski google-drive
 
 ########################################
 # MAC APP STORE INSTALLS
@@ -126,6 +138,12 @@ caski google-drive
 brew install mas
 # GIPHY Capture - To create Gifs
 mas install 668208984
+# Keynote
+mas install 409183694
+# Pages
+mas install 409201541
+# Numbers
+mas install 4092038250
 
 # Xcode - Apple Development tools - BEWARE, TAKES A LONG TIME!!
 #mas install 497799835
