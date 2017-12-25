@@ -83,8 +83,9 @@ caski sourcetree
 #Postman - API-tester
 caski postman
 
-#OpenConnect-GUI - Open source version of Cisco AyConnect
-caski openconnect-gui
+#iTerm2 - terminal
+caski iterm2
+cp ./com.googlecode.iterm2.plist ~/Library/Preferences/
 
 #JDK - Java Development Kit, needed for Android SDK
 caski java

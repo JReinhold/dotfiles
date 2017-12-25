@@ -7,12 +7,10 @@
 echo "----- SETTING UP DOCK ITEMS --------"
 
 dockutil --remove all --no-restart
-dockutil --add '/Applications/Photos.app' --no-restart
 dockutil --add '/Applications/Google Chrome.app' --no-restart
 dockutil --add '/Applications/Wavebox.app' --no-restart
 dockutil --add '/Applications/Caprine.app' --no-restart
 dockutil --add '/Applications/Slack.app' --no-restart
-dockutil --add '/Applications/Visual Studio Code.app' --no-restart
 
 #iCloud Downloads folder, needs to exist beforehand, at root iCloud Drive
 dockutil --add '~/Library/Mobile Documents/com~apple~CloudDocs/Downloads' --view list --display stack --sort name --section others --no-restart
@@ -36,6 +34,14 @@ sudo -v
 
 # Keep-alive: update existing `sudo` time stamp until `settings.sh` has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
+########################################
+# FONTS
+# Installing essential fonts
+########################################
+echo "----- INSTALLING FONTS --------"
+
+cp ./fonts/* /Library/Fonts
 
 ###############################################################################
 # General UI/UX                                                               #

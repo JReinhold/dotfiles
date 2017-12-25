@@ -6,7 +6,7 @@
 #######################################
 
 #Bash Completion - autocomplete for Bash, if you still want to use that...
-brew install bash-completion
+brew install bash bash-completion
 touch ~/.bash_profile
 echo "if [ -f $(brew --prefix)/etc/bash_completion ]; then" >> ~/.bash_profile
 echo "  . $(brew --prefix)/etc/bash_completion" >> ~/.bash_profile
@@ -26,9 +26,24 @@ brew install dockutil
 #NOTE: git is already installed by default on OSX, but it's outdated, this ensures latest version and Bash Completion
 brew install git git-flow
 
+#Zsh Shell
+brew install zsh zsh-completions zsh-autosuggestions zsh-history-substring-search zsh-syntax-highlighting
+echo "/usr/local/bin/zsh" | sudo tee -a /etc/shells
+chsh -s $(which zsh)
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+cp ./.zshrc ~
+# setup theme
+# setup aliases
+
+
+#auto ls - auto print dir on <enter> and cd command
+#https://github.com/desyncr/auto-ls
+curl -L https://git.io/auto-ls > ~/.oh-my-zsh/custom/auto-ls.zsh
+source ~/.oh-my-zsh/custom/auto-ls.zsh
+
 #Fish shell
-brew install fish
-echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
-chsh -s /usr/local/bin/fish #make fish shell default
-curl -L https://get.oh-my.fish | fish
-omf install brew git-flow osx pure
+# brew install fish
+# echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
+# chsh -s /usr/local/bin/fish #make fish shell default
+# curl -L https://get.oh-my.fish | fish
+# omf install brew git-flow osx pure

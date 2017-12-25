@@ -10,17 +10,14 @@ brew install node
 npm update -g npm
 brew install yarn
 
-#gulp - automatic builder
-npm install -g gulp
-
 #React Native CLI - to create and run React Native projects
 npm install -g react-native-cli
 
 #ESLint - To lint JavaScript files
 npm install -g eslint
 
-#HTTP-Server - To create a minimalistisk http server local
-npm install -g http-server
+#Serve - To create a minimalistisk http server local
+npm install -g serve
 
 #TypeScript compiler
 npm install -g typescript

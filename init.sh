@@ -12,7 +12,6 @@ brew update
 ./apps.sh
 ./node.sh
 ./aliases.sh
-./functions.sh
 ./settings.sh
 
 cp .editorconfig ~/.editorconfig
