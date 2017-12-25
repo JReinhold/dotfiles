@@ -60,6 +60,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  osx
 )
 
 source $ZSH/oh-my-zsh.sh

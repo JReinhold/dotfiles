@@ -32,14 +32,11 @@ echo "/usr/local/bin/zsh" | sudo tee -a /etc/shells
 chsh -s $(which zsh)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 cp ./.zshrc ~
-# setup theme
-# setup aliases
-
+cp ./aliases.zsh ~/.oh-my-zsh/custom/
 
 #auto ls - auto print dir on <enter> and cd command
 #https://github.com/desyncr/auto-ls
 curl -L https://git.io/auto-ls > ~/.oh-my-zsh/custom/auto-ls.zsh
-source ~/.oh-my-zsh/custom/auto-ls.zsh
 
 #Fish shell
 # brew install fish
