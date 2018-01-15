@@ -35,3 +35,9 @@ alias mergepdf='/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/Re
 
 # Lock the screen (when going AFK)
 alias afk='open -a ScreenSaverEngine'
+
+# Use colored cat (ccat) instead of cat
+alias cat=ccat
+
+# fuzzy search a file, open it in VSCode
+alias fzfo='fzf | xargs -o code'

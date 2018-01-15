@@ -61,6 +61,10 @@ HIST_STAMPS="yyyy-mm-dd"
 plugins=(
   git
   osx
+  node
+  yarn
+  brew
+  z
 )
 
 source $ZSH/oh-my-zsh.sh

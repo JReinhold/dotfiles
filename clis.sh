@@ -26,6 +26,9 @@ brew install dockutil
 #NOTE: git is already installed by default on OSX, but it's outdated, this ensures latest version and Bash Completion
 brew install git git-flow
 
+#Various clis, to enhance terminal workflow
+brew install the_silver_searcher ccat fzf tig
+
 #Zsh Shell
 brew install zsh zsh-completions zsh-autosuggestions zsh-history-substring-search zsh-syntax-highlighting
 echo "/usr/local/bin/zsh" | sudo tee -a /etc/shells
