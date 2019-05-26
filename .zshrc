@@ -52,7 +52,7 @@ ZSH_THEME="agnoster"
 HIST_STAMPS="yyyy-mm-dd"
 
 # Would you like to use another custom folder than $ZSH/custom?
-ZSH_CUSTOM=~/dev/open-source/initMacOS/oh-my-custom-zsh
+ZSH_CUSTOM=~/dev/open-source/dotfiles/oh-my-custom-zsh
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
