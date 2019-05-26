@@ -27,23 +27,12 @@ brew install dockutil
 brew install git git-flow
 
 #Various clis, to enhance terminal workflow
-brew install the_silver_searcher ccat fzf tig
+brew install the_silver_searcher bat fzf tig jq heroku heroku-node pipenv
 
 #Zsh Shell
 brew install zsh zsh-completions zsh-autosuggestions zsh-history-substring-search zsh-syntax-highlighting
 echo "/usr/local/bin/zsh" | sudo tee -a /etc/shells
 chsh -s $(which zsh)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-cp ./.zshrc ~
-cp ./aliases.zsh ~/.oh-my-zsh/custom/
-
-#auto ls - auto print dir on <enter> and cd command
-#https://github.com/desyncr/auto-ls
-curl -L https://git.io/auto-ls > ~/.oh-my-zsh/custom/auto-ls.zsh
-
-#Fish shell
-# brew install fish
-# echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
-# chsh -s /usr/local/bin/fish #make fish shell default
-# curl -L https://get.oh-my.fish | fish
-# omf install brew git-flow osx pure
+# symlink Zsh configuration to this directory
+ln -s ./.zshrc ~/.zshrc

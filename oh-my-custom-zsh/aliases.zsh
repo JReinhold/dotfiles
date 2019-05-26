@@ -36,8 +36,36 @@ alias mergepdf='/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/Re
 # Lock the screen (when going AFK)
 alias afk='open -a ScreenSaverEngine'
 
-# Use colored cat (ccat) instead of cat
-alias cat=ccat
+# Use bat instead of cat
+alias cat=bat
 
 # fuzzy search a file, open it in VSCode
 alias fzfo='fzf | xargs -o code'
+
+# forward localhost to reinhold.serveo.net, reachable anywhere
+# optional 1st parameter can be port to forward - defaults to 8000
+function serveo() {
+	local SRC_PORT=8000
+	if [ -n "$1" ]
+	then
+		SRC_PORT=$1
+	fi
+	echo "Forwarding localhost:$SRC_PORT"
+	ssh -R reinhold:80:localhost:$SRC_PORT serveo.net
+}
+
+alias emu='emulator -avd Pixel_2_API_27'
+
+##########
+# Python #
+##########
+
+# pipenv
+alias psh='pipenv shell'
+
+# Django
+alias m='./manage.py'
+alias run='./manage.py runserver 0.0.0.0:8000'
+alias shell='./manage.py shell'
+alias dev='./manage.py runserver & ./manage.py livereload && fg'
+alias pop='yes | ./manage.py populate_db'

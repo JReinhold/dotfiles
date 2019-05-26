@@ -1,0 +1,11 @@
+#Set directory=hex-value pairs to set tab colors based on current working dir
+#You can use regular expressions for directories
+#The color will be set to the first matched directory (top to bottom)
+#Examples below (lines starting with '#' are ignored, so remove it for it to work)
+/Users/jeppe/dev/reccoon/reccoon_backend/react_app=#00ab0c
+/Users/jeppe/dev/reccoon/reccoon_backend/react_app/*=#00ab0c
+/Users/jeppe/dev/reccoon/reccoon_backend=#ff9300
+/Users/jeppe/dev/reccoon/reccoon_backend/*=#ff9300
+/Users/jeppe/dev/reccoon/drivers_app=#ff85ff
+/Users/jeppe/dev/reccoon/drivers_app/*=#ff85ff
+/Users/jeppe/dev/open-source/*=#176ab6

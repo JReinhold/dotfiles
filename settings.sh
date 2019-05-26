@@ -7,10 +7,10 @@
 echo "----- SETTING UP DOCK ITEMS --------"
 
 dockutil --remove all --no-restart
-dockutil --add '/Applications/Google Chrome.app' --no-restart
-dockutil --add '/Applications/Wavebox.app' --no-restart
+dockutil --add '/Applications/Brave Browser.app' --no-restart
 dockutil --add '/Applications/Caprine.app' --no-restart
 dockutil --add '/Applications/Slack.app' --no-restart
+dockutil --add '/Applications/Visual Studio Code.app' --no-restart
 
 #iCloud Downloads folder, needs to exist beforehand, at root iCloud Drive
 dockutil --add '~/Library/Mobile Documents/com~apple~CloudDocs/Downloads' --view list --display stack --sort name --section others --no-restart
@@ -99,8 +99,8 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 # SSD-specific tweaks                                                         #
 ###############################################################################
 
-# Disable hibernation (speeds up entering sleep mode)
-sudo pmset -a hibernatemode 0
+# Enable hibernation (drains battery less when sleeping)
+sudo pmset -a hibernatemode 25
 
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
