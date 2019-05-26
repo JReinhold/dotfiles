@@ -127,6 +127,7 @@ caski nosleep
 
 # Quicklook extensions - different extensions to the native quicklook to make it better with different file types
 caski qlcolorcode qlstephen qlmarkdown quicklook-json webpquicklook qlvideo
+defaults write org.n8gray.QLColorCode hlTheme base16/solarized-dark
 
 ########################################
 # MAC APP STORE INSTALLS

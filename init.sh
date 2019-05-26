@@ -9,6 +9,7 @@ brew update
 
 #Run install scripts
 ./clis.sh
+./mackup.sh
 ./apps.sh
 ./node.sh
 ./aliases.sh
