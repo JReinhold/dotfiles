@@ -34,3 +34,7 @@ A final list of each app installed (and failed) will be placed in `~/Desktop/app
 ## Troubleshooting
 
 VSCode currently gives an error on first load, because it is trying to overwrite the `settings.json`, but it has recently been modified. The user must then handle the conflict. I recommend closing the `settings.json` file, and mark the downloaded `settings.json` as the one to keep. I don't know how to fix this.
+
+## ErgoDox EZ keyboard
+
+I use the ErgoDox EZ keyboard with a custom layout. The firmware is located in this repository, and can be seen [here](https://configure.ergodox-ez.com/ergodox-ez/layouts/gZwN/latest/0)

@@ -125,6 +125,9 @@ caski android-file-transfer
 # NoSleep - System Utility to toggle wether mac sleeps
 caski nosleep
 
+# Quicklook extensions - different extensions to the native quicklook to make it better with different file types
+caski qlcolorcode qlstephen qlmarkdown quicklook-json webpquicklook qlvideo
+
 ########################################
 # MAC APP STORE INSTALLS
 ########################################
