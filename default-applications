@@ -1,0 +1,46 @@
+# This file is to be read by the 'duti' CLI to set default applications for file extensions
+# see more at https://github.com/moretension/duti
+
+# video
+org.videolan.vlc avi all
+org.videolan.vlc mkv all
+org.videolan.vlc mp4 all
+org.videolan.vlc m4v all
+org.videolan.vlc mov all
+org.videolan.vlc mpg all
+org.videolan.vlc mpeg all
+
+# audio
+org.videolan.vlc wav all
+org.videolan.vlc aac all
+org.videolan.vlc m4a all
+org.videolan.vlc mp3 all
+
+# text
+com.microsoft.VSCode ts all
+com.microsoft.VSCode tsx all
+com.microsoft.VSCode js all
+com.microsoft.VSCode jsx all
+com.microsoft.VSCode md all
+com.microsoft.VSCode sh all
+com.microsoft.VSCode cfg all
+com.microsoft.VSCode py all
+com.microsoft.VSCode java all
+com.microsoft.VSCode txt all
+com.microsoft.VSCode csv all
+com.microsoft.VSCode json all
+com.microsoft.VSCode env all
+com.microsoft.VSCode lock all
+com.microsoft.VSCode xml all
+com.microsoft.VSCode iml all
+com.microsoft.VSCode yml all
+com.microsoft.VSCode yaml all
+com.microsoft.VSCode Dockerfile all
+# html doesn't work, see https://github.com/moretension/duti/issues/34
+# com.microsoft.VSCode html all
+
+# misc
+com.aone.keka zip all
+com.aone.keka 7z all
+com.aone.keka rar all
+org.m0k.transmission torrent all
