@@ -1,0 +1,17 @@
+[core]
+	excludesfile = /Users/jeppe/.gitignore_global
+	autocrlf = input
+	editor = code --wait --new-window
+[merge]
+    tool = vscode
+[mergetool "vscode"]
+    cmd = code --wait --new-window $MERGED
+[diff]
+    tool = vscode
+[difftool "vscode"]
+    cmd = code --wait --new-window --diff $LOCAL $REMOTE
+[user]
+	name = Jeppe Reinhold
+	email = jeppereinhold@gmail.com
+[commit]
+	template = /Users/jeppe/.stCommitMsg
