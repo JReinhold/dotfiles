@@ -63,9 +63,11 @@ plugins=(
   osx
   node
   yarn
-  brew
   z
-  iterm-tab-color
+  zsh-completions
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  zsh-history-substring-search
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -103,18 +105,6 @@ export LANG=en_US.UTF-8
 # default system user, to remove "user@hostname" in the prompt
 DEFAULT_USER=jeppe
 
-# zsh completions
-fpath=(/usr/local/share/zsh-completions $fpath)
-
-# zsh auto suggestions
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# syntax highlighting
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# zsh history search
-source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
-
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 bindkey -M vicmd 'k' history-substring-search-up
@@ -131,7 +121,7 @@ setopt magicequalsubst
 
 # tabtab source for yarn package
 # uninstall by removing these lines or running `tabtab uninstall yarn`
-[[ -f /Users/jeppe/.config/yarn/global/node_modules/tabtab/.completions/yarn.zsh ]] && . /Users/jeppe/.config/yarn/global/node_modules/tabtab/.completions/yarn.zsh
+[[ -f ~/.config/yarn/global/node_modules/tabtab/.completions/yarn.zsh ]] && . ~/.config/yarn/global/node_modules/tabtab/.completions/yarn.zsh
 
 # tell pipenv to install environments to project root instead of ~/.local/share/virtualenvs
 export PIPENV_VENV_IN_PROJECT=true

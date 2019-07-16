@@ -9,6 +9,9 @@ alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
 # Google Chrome Incognito mode
 alias chromei='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --incognito'
 
+# SSH into VDI
+alias vdi='ssh reinhold-vdi'
+
 # IP addresses
 alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias localip='ipconfig getifaddr en0'

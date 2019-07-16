@@ -25,6 +25,7 @@ brew install dockutil
 # Git and Git Flow - add Git Flow extension to Git
 # NOTE: git is already installed by default on OSX, but it's outdated, this ensures latest version and Bash Completion
 brew install git git-flow
+rm ~/.gitconfig ~/.gitignore_global
 ln -s ./gitconfig.symlink ~/.gitconfig
 ln -s ./gitignore_global.symlink ~/.gitignore_global
 
@@ -35,9 +36,10 @@ brew install the_silver_searcher bat fzf tig jq heroku heroku-node pipenv
 brew install mackup
 
 # Zsh Shell
-brew install zsh zsh-completions zsh-autosuggestions zsh-history-substring-search zsh-syntax-highlighting
+brew install zsh
 echo "/usr/local/bin/zsh" | sudo tee -a /etc/shells
 chsh -s $(which zsh)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 #  symlink Zsh configuration to this directory
+rm ~/.zshrc
 ln -s ./.zshrc ~/.zshrc
