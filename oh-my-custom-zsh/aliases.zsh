@@ -9,9 +9,6 @@ alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
 # Google Chrome Incognito mode
 alias chromei='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --incognito'
 
-# SSH into VDI
-alias vdi='ssh reinhold-vdi'
-
 # IP addresses
 alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias localip='ipconfig getifaddr en0'
@@ -45,6 +42,20 @@ alias cat=bat
 # fuzzy search a file, open it in VSCode
 alias fzfo='fzf | xargs -o code'
 
+# alias when a git PR has been merged and/or squashed, to get back to develop and cleanup.
+# optionally supply an argument that tells which branch to goto, eg. "gitfinish master" will checkout master instead of develop
+function gitfinish() {
+	FINISHED_BRANCH="$(git rev-parse --abbrev-ref HEAD)"
+	if [ "$1" != "" ]; then
+		git checkout $1
+	else
+    	git checkout develop
+	fi
+	git pull
+	git branch --delete --force $FINISHED_BRANCH
+	git fetch --prune
+}
+
 # forward localhost to reinhold.serveo.net, reachable anywhere
 # optional 1st parameter can be port to forward - defaults to 8000
 function serveo() {
@@ -72,3 +83,18 @@ alias run='./manage.py runserver 0.0.0.0:8000'
 alias shell='./manage.py shell'
 alias dev='./manage.py runserver & ./manage.py livereload && fg'
 alias pop='yes | ./manage.py populate_db'
+
+##########
+# Virtual Desktop Interface #
+##########
+
+# SSH into VDI
+alias vdi-ssh='ssh reinhold-vdi'
+
+# Start and stop VDI
+alias vdi-start='gcloud compute instances start reinhold-vdi'
+alias vdi-stop='gcloud compute instances stop reinhold-vdi'
+
+# save and restore tmux session WITHIN vdi
+alias tmux-save='~/.tmux/plugins/tmux-resurrect/scripts/save'
+alias tmux-restore='~/.tmux/plugins/tmux-resurrect/scripts/restore'
