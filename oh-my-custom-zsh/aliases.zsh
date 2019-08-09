@@ -96,5 +96,5 @@ alias vdi-start='gcloud compute instances start reinhold-vdi'
 alias vdi-stop='gcloud compute instances stop reinhold-vdi'
 
 # save and restore tmux session WITHIN vdi
-alias tmux-save='~/.tmux/plugins/tmux-resurrect/scripts/save'
-alias tmux-restore='~/.tmux/plugins/tmux-resurrect/scripts/restore'
+alias tmux-save='~/.tmux/plugins/tmux-resurrect/scripts/save.sh'
+alias tmux-restore='~/.tmux/plugins/tmux-resurrect/scripts/restore.sh'
