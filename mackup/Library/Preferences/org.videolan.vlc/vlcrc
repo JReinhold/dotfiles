@@ -1757,7 +1757,7 @@ sout-chromecast-show-perf-warning=0
 [auhal] # HAL AudioUnit output
 
 # Audio volume (integer)
-auhal-volume=307
+#auhal-volume=256
 
 # Last audio device (string)
 auhal-audio-device=0
