@@ -4,18 +4,11 @@
 # YARN INSTALLS
 # Common packages required for JavaScript development
 ########################################
-echo "----- WILL NOW INSTALL GLOBAL NPM PACKAGES -------"
-# install node.js with npm - JavaScript runner and package manager
-brew install node
+echo "----- INSTALLING NODE.JS STUFF --------"
+# install node.js LTS with npm - JavaScript runner and package manager
+brew install node@12
 npm update -g npm
 brew install yarn
-
-# React Native CLI - to create and run React Native projects
-yarn global add react-native-cli
-
-# ESLint - To lint JavaScript files
-yarn global add eslint
-
 
 # ESLint - To lint JavaScript files
 yarn global add eslint

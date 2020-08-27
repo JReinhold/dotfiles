@@ -14,116 +14,142 @@ caski () {
 ########################################
 # CASK INSTALLS
 # All the GUI apps - non-Mac App Store
-# Uses created "caski" function from init.sh
+# Uses created "caski" function above
 ########################################
-echo "----- WILL NOW INSTALL APPS -------"
+echo "----- INSTALLING APPLICATIONS --------"
 
-# 1Password - password manager
-caski 1password
+# Bitwarden - password manager
+# https://bitwarden.com
+caski bitwarden
 
 # Browsers
-caski google-chrome
-caski brave-browser
-caski firefox
+caski google-chrome # https://google.com/chrome
+caski brave-browser # https://brave.com
+caski firefox # https://www.mozilla.org/firefox
 
 # Fira Code Font - Monospace font with ligatures
+# https://github.com/tonsky/FiraCode
 brew tap caskroom/fonts
 caski font-fira-code
 
 # Visual Studio Code - Lightweight editor
+# https://code.visualstudio.com
 caski visual-studio-code
-./vscode.sh # setup settings and extensions on first launch
 
 # Alfred - Launcher - NEEDS LICENCE
-caski alfred
+# https://alfredapp.com
+caski alfred3
 
 # BetterTouchTool - tool to customize mouse and keyboard
+# https://folivora.ai
 caski bettertouchtool
 
 # HyperDock - Manage Dock and windows - NEEDS LICENSE
+# https://bahoom.com/hyperdock
 caski hyperdock
 
 # iStat Menus - Hardware Monitor - NEEDS LICENSE
-caski istat-menus
+# https://bjango.com/mac/istatmenus
+caski istat-menus5
 
-# Spectacle - Better window resizer and mover
-caski spectacle
-
-# Contexts - Better CMD+TAB
-caski contexts
+# Rectangle - Better window resizer and mover
+# https://rectangleapp.com
+caski rectangle
 
 # Caprine - Facebook Messenger app
+# https://sindresorhus.com/caprine
 caski caprine
 
 # Slack - Messaging app
+# https://slack.com
 caski slack
 
-# Skype - voice communication app
-caski skype
-
-# Toggl - Timer app
-caski toggldesktop
-
 # Figma - Webbased vector app
+# https://figma.com
 caski figma
 
 # Spotify - Music streaming app
+# https://spotify.com
 caski spotify
 
-# SourceTree - Git GUI
-caski sourcetree
-
 # Postman - API-tester
+# https://postman.com
 caski postman
 
 # iTerm2 - terminal
+# https://www.iterm2.com
 caski iterm2
 cp ./com.googlecode.iterm2.plist ~/Library/Preferences/
 
-# JDK - Java Development Kit, needed for Android SDK
+# OpenJDK - Java Development Kit, needed for Android SDK
+# https://openjdk.java.net
 caski java
 
 # Android Studio
+# https://developer.android.com/studio
 caski android-studio
 export ANDROID_HOME=${HOME}/Library/Android/sdk
 export PATH=${PATH}:${ANDROID_HOME}/tools
 export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 
 # Arduino IDE
+# https://www.arduino.cc/en/main/software
 caski arduino
 
 # Fluor - enable/disable fn keys for specific apps
+# https://fluorapp.net
 caski fluor
 
-# Googles awesome screensaver - needs manual enabling in Sys Prefs
-caski google-featured-photos
+# Aerial screensaver
+# https://aerialscreensaver.github.io
+caski aerial
 
 # Transmission - torrent downloader
+# https://transmissionbt.com
 caski transmission
 
 # VLC - media player
+# https://videolan.org
 caski vlc
 
 # Teensy - Flashing tool for teensy boards (ErogDox keyboard)
+# https://www.pjrc.com/teensy/loader.html
 caski teensy
 
 # Keka - Archive manager (zip, rar, dmg, etc.)
+# https://keka.io
 caski keka
 
 # Handbrake - media encoder
+# https://handbrake.fr
 caski handbrake
 
-#  Videostream - Cast any video to Chromecast
-caski Videostream
-
 # Docker - VM and container handler
+# https://docker.com
 caski docker
 
-# Android File Transfer - transfer files to a cabled android device
-caski android-file-transfer
+# HEY - e-mail app
+# https://hey.com
+caski hey
 
-# NoSleep - System Utility to toggle wether mac sleeps
-caski nosleep
+# Notion - All things note app
+# https://notion.so
+caski notion
+
+# Steam - Game launcher
+# https://steampowered.com
+caski steam
+
+# TeamViewer - remote desktop tool
+# https://teamviewer.com
+caski teamviewer
+
+# Microsoft 365 suite - NEEDS LICENSE
+# https://www.microsoft.com/da-dk/microsoft-365/mac/microsoft-365-for-mac
+caski microsoft-word
+caski microsoft-excel
+caski microsoft-powerpoint
+caski microsoft-teams
 
 # Quicklook extensions - different extensions to the native quicklook to make it better with different file types
 caski qlcolorcode qlstephen qlmarkdown quicklook-json webpquicklook qlvideo

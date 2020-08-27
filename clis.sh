@@ -5,6 +5,8 @@
 # Installs CLI-tools
 #######################################
 
+echo "----- INSTALLING CLI TOOLS --------"
+
 # Bash Completion - autocomplete for Bash, if you still want to use that...
 brew install bash bash-completion
 touch ~/.bash_profile
@@ -22,6 +24,9 @@ brew install wget
 # dockutil - CLI to manage dock items
 brew install dockutil
 
+# bitwarden CLI - password manager
+brew install bitwarden-cli
+
 # Git and Git Flow - add Git Flow extension to Git
 # NOTE: git is already installed by default on OSX, but it's outdated, this ensures latest version and Bash Completion
 brew install git git-flow
@@ -30,7 +35,7 @@ ln -s ./gitconfig.symlink ~/.gitconfig
 ln -s ./gitignore_global.symlink ~/.gitignore_global
 
 # Various clis, to enhance terminal workflow
-brew install the_silver_searcher bat fzf tig jq heroku heroku-node pipenv
+brew install the_silver_searcher bat fzf tig jq pipenv
 
 # mackup - tool for backing up and restoring application preferences
 brew install mackup

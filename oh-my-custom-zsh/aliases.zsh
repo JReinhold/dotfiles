@@ -4,6 +4,11 @@ alias ldl='cd ~/Downloads'
 alias dt='cd ~/Desktop'
 alias dev='cd ~/dev'
 
+# Brave Browser
+alias chrome='/Applications/Brave\ Browser.app/Contents/MacOS/Brave\ Browser'
+# Brave Browser Incognito mode
+alias chromei='/Applications/Brave\ Browser.app/Contents/MacOS/Brave\ Browser --incognito'
+
 # Google Chrome
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
 # Google Chrome Incognito mode
@@ -56,18 +61,19 @@ function gitfinish() {
 	git fetch --prune
 }
 
-# forward localhost to reinhold.serveo.net, reachable anywhere
+# forward localhost to localhost.run, reachable anywhere
 # optional 1st parameter can be port to forward - defaults to 8000
-function serveo() {
+function lh() {
 	local SRC_PORT=8000
 	if [ -n "$1" ]
 	then
 		SRC_PORT=$1
 	fi
 	echo "Forwarding localhost:$SRC_PORT"
-	ssh -R reinhold:80:localhost:$SRC_PORT serveo.net
+	ssh -R 80:localhost:$SRC_PORT ssh.localhost.run
 }
 
+# Android emulator
 alias emu='emulator -avd Pixel_2_API_27'
 
 ##########
@@ -83,18 +89,3 @@ alias run='./manage.py runserver 0.0.0.0:8000'
 alias shell='./manage.py shell'
 alias dev='./manage.py runserver & ./manage.py livereload && fg'
 alias pop='yes | ./manage.py populate_db'
-
-##########
-# Virtual Desktop Interface #
-##########
-
-# SSH into VDI
-alias vdi-ssh='ssh reinhold-vdi'
-
-# Start and stop VDI
-alias vdi-start='gcloud compute instances start reinhold-vdi'
-alias vdi-stop='gcloud compute instances stop reinhold-vdi'
-
-# save and restore tmux session WITHIN vdi
-alias tmux-save='~/.tmux/plugins/tmux-resurrect/scripts/save.sh'
-alias tmux-restore='~/.tmux/plugins/tmux-resurrect/scripts/restore.sh'
