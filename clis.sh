@@ -27,6 +27,9 @@ brew install dockutil
 # bitwarden CLI - password manager
 brew install bitwarden-cli
 
+# .NET SDK - Development
+brew install dotnet-sdk
+
 # Git and Git Flow - add Git Flow extension to Git
 # NOTE: git is already installed by default on OSX, but it's outdated, this ensures latest version and Bash Completion
 brew install git git-flow

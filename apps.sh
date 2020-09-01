@@ -136,6 +136,9 @@ caski hey
 # https://notion.so
 caski notion
 
+# Signal - Messaging app
+caski signal
+
 # Steam - Game launcher
 # https://steampowered.com
 caski steam
@@ -147,6 +150,7 @@ caski teamviewer
 # Microsoft 365 suite - NEEDS LICENSE
 # https://www.microsoft.com/da-dk/microsoft-365/mac/microsoft-365-for-mac
 caski microsoft-word
+caski microsoft-outlook
 caski microsoft-excel
 caski microsoft-powerpoint
 caski microsoft-teams
