@@ -163,7 +163,8 @@ defaults write org.n8gray.QLColorCode hlTheme base16/solarized-dark
 # MAC APP STORE INSTALLS
 ########################################
 
-brew install mas
+# JIRA Cloud
+mas install 1475897096
 # GIPHY Capture - To create Gifs
 mas install 668208984
 # Keynote

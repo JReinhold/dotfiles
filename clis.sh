@@ -27,6 +27,9 @@ brew install dockutil
 # bitwarden CLI - password manager
 brew install bitwarden-cli
 
+# mas-cli - Mac App Store CLI
+brew install mas
+
 # .NET SDK - Development
 brew install dotnet-sdk
 
