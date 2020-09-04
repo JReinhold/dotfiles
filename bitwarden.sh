@@ -6,7 +6,7 @@ echo "Log in to Bitwarden:"
 BW_SESSION=$(bw login --raw)
 
 # Add Fontawesome Pro NPM token to env variables
-FONTAWSOME_NPM_TOKEN=$(bw get item 23ddb7f9-9d81-4bb0-be1c-ac230150f788 --session ${BW_SESSION} | jq '.fields | .[0].value')
+FONTAWSOME_NPM_TOKEN=$(bw get item ffee47d6-b143-47bd-a06d-ac2c0126726b --session ${BW_SESSION} | jq '.fields | .[0].value')
 echo "export FONTAWESOME_NPM_TOKEN=${FONTAWSOME_NPM_TOKEN}" >> secrets.sh
 
 # Add SSH keys
