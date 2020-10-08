@@ -32,10 +32,11 @@ brew install mas
 
 # .NET SDK - Development
 brew install dotnet-sdk
+dotnet tool install --global dotnet-ef
 
 # Git and Git Flow - add Git Flow extension to Git
 # NOTE: git is already installed by default on OSX, but it's outdated, this ensures latest version and Bash Completion
-brew install git git-flow
+brew install git git-flow-avh
 rm ~/.gitconfig ~/.gitignore_global
 ln -s ./gitconfig.symlink ~/.gitconfig
 ln -s ./gitignore_global.symlink ~/.gitignore_global
