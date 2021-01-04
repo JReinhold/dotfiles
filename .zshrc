@@ -140,3 +140,4 @@ export PATH=$PATH:~/.local/bin
 
 # contains global secrets, gitignored from dotfiles
 source secrets.sh
+source /Users/jeppe/.config/broot/launcher/bash/br
