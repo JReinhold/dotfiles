@@ -24,8 +24,14 @@ brew install wget
 # dockutil - CLI to manage dock items
 brew install dockutil
 
+# Azure CLI
+brew install azure-cli
+
 # bitwarden CLI - password manager
 brew install bitwarden-cli
+
+# 1Password CLI - Password manager
+brew install --cask 1password-cli
 
 # mas-cli - Mac App Store CLI
 brew install mas

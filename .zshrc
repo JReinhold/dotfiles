@@ -126,9 +126,6 @@ setopt magicequalsubst
 # tell pipenv to install environments to project root instead of ~/.local/share/virtualenvs
 export PIPENV_VENV_IN_PROJECT=true
 
-# set global auth token to Fontawesome Pro icons
-export FONTAWESOME_NPM_TOKEN=6F134172-0C23-447A-8EFC-C0FF3520C3E1
-
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 export ANDROID_HOME=$HOME/Library/Android/sdk
@@ -139,5 +136,5 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:~/.local/bin
 
 # contains global secrets, gitignored from dotfiles
-source secrets.sh
+source ~/dev/open-source/dotfiles/secrets.sh
 source /Users/jeppe/.config/broot/launcher/bash/br

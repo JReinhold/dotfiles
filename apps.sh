@@ -22,6 +22,10 @@ echo "----- INSTALLING APPLICATIONS --------"
 # https://bitwarden.com
 caski bitwarden
 
+# 1Password - password manager
+# https://1password.com
+caski 1password
+ 
 # Browsers
 caski google-chrome # https://google.com/chrome
 caski brave-browser # https://brave.com
@@ -35,6 +39,10 @@ caski font-fira-code
 # Visual Studio Code - Lightweight editor
 # https://code.visualstudio.com
 caski visual-studio-code
+
+# JetBrains Rider - Non-lightweight C# editor
+# https://www.jetbrains.com/rider/
+caski rider
 
 # Alfred - Launcher - NEEDS LICENCE
 # https://alfredapp.com

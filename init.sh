@@ -3,7 +3,7 @@
 #Setups the required tools for the script
 mkdir ~/dev
 
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)";
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)";
 brew doctor
 brew update
 
