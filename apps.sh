@@ -54,7 +54,7 @@ caski bettertouchtool
 
 # HyperDock - Manage Dock and windows - NEEDS LICENSE
 # https://bahoom.com/hyperdock
-caski hyperdock
+# caski hyperdock
 
 # iStat Menus - Hardware Monitor - NEEDS LICENSE
 # https://bjango.com/mac/istatmenus
@@ -64,9 +64,9 @@ caski istat-menus5
 # https://rectangleapp.com
 caski rectangle
 
-# Caprine - Facebook Messenger app
-# https://sindresorhus.com/caprine
-caski caprine
+# Facebook Messenger app
+# https://messenger.com
+caski messenger
 
 # Slack - Messaging app
 # https://slack.com
@@ -106,7 +106,7 @@ caski arduino
 
 # Fluor - enable/disable fn keys for specific apps
 # https://fluorapp.net
-caski fluor
+# caski fluor
 
 # Aerial screensaver
 # https://aerialscreensaver.github.io
@@ -171,10 +171,6 @@ defaults write org.n8gray.QLColorCode hlTheme base16/solarized-dark
 # MAC APP STORE INSTALLS
 ########################################
 
-# JIRA Cloud
-mas install 1475897096
-# GIPHY Capture - To create Gifs
-mas install 668208984
 # Keynote
 mas install 409183694
 # Pages
