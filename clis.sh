@@ -24,6 +24,9 @@ brew install wget
 # dockutil - CLI to manage dock items
 brew install dockutil
 
+# broot - File browser CLI
+brew install broot
+
 # Azure CLI
 brew install azure-cli
 

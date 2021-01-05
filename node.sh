@@ -6,7 +6,7 @@
 ########################################
 echo "----- INSTALLING NODE.JS STUFF --------"
 # install node.js LTS with npm - JavaScript runner and package manager
-brew install node@12
+brew install node@14
 npm update -g npm
 brew install yarn
 

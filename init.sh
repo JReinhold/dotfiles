@@ -8,6 +8,7 @@ brew doctor
 brew update
 
 #Run install scripts
+./manual-installs.sh
 ./clis.sh
 ./bitwarden.sh
 ./mackup.sh

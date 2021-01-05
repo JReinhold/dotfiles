@@ -116,6 +116,10 @@ caski aerial
 # https://transmissionbt.com
 caski transmission
 
+# NordVPN - VPN
+# https://nordvpn.com
+caski nordvpn
+
 # VLC - media player
 # https://videolan.org
 caski vlc
