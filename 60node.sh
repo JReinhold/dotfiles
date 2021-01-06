@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
+########################################
+# NODE INSTALLS
+# Installs Node.js and root-level packages (using yarn)
+########################################
+source ./05functions.sh
+announce "Installing Node.js and tools"
 
-########################################
-# YARN INSTALLS
-# Common packages required for JavaScript development
-########################################
-echo "----- INSTALLING NODE.JS STUFF --------"
 # install node.js LTS with npm - JavaScript runner and package manager
 brew install node@14
 npm update -g npm
@@ -22,4 +23,3 @@ yarn global add serve
 # TypeScript compiler
 yarn global add typescript
 
-echo "----- NPM PACKAGES DONE-------"

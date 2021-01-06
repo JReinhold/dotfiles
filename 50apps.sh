@@ -1,22 +1,10 @@
 #!/usr/bin/env bash
-
-# Install function, with notification support
-# first parameter is app to install
-caski () {
-	if brew install --cask $* ; then
-		terminal-notifier -message "$1 installed successfully 🎉🎈" -title "🍺 Cask Install" -sound default -timeout 10
-	else
-		printf "FAILED: $*\n" >> ~/Desktop/appList.txt
-		terminal-notifier -message " ⛔️ $1 INSTALLATION FAILED" -title "⚠️  Cask Install" -sound default -timeout 10
-	fi
-}
-
 ########################################
 # CASK INSTALLS
-# All the GUI apps - non-Mac App Store
-# Uses created "caski" function above
+# Installs all the GUI, non-Mac App Store apps
 ########################################
-echo "----- INSTALLING APPLICATIONS --------"
+source ./05functions.sh
+announce "Installing cask apps"
 
 # Bitwarden - password manager
 # https://bitwarden.com
@@ -174,6 +162,7 @@ defaults write org.n8gray.QLColorCode hlTheme base16/solarized-dark
 ########################################
 # MAC APP STORE INSTALLS
 ########################################
+announce "Installing Mac App Store apps"
 
 # Keynote
 mas install 409183694
@@ -184,4 +173,3 @@ mas install 4092038250
 
 # Xcode - Apple Development tools - BEWARE, TAKES A LONG TIME!!
 #mas install 497799835
-echo "----- APPS DONE-------"

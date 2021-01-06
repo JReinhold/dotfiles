@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
-
-echo "----- GETTING SECRETS FROM 1PASSWORD VAULT --------"
-echo "Log in to 1Password:"
+#######################################
+# 1PASSWORD
+# Logs in and gets secret from 1Password vaults 
+#######################################
+source ./05functions.sh
+announce "Getting secrets from 1Password vault - log in to 1Password:"
 
 # Ensure CLI is up-to-date
 op update

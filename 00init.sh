@@ -1,4 +1,10 @@
 #!/usr/bin/env bash
+#######################################
+# INITIAL SCRIPT
+# Runs all other scripts
+#######################################
+source ./05functions.sh
+announce "Initialization started"
 
 #Setups the required tools for the script
 mkdir ~/dev
@@ -6,13 +12,6 @@ mkdir ~/dev
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)";
 brew doctor
 brew update
-
-# Highly readable echo to announce what is going on
-announce () {
-    echo "@@@@@@@@@@@@@@@@@@@@@@@@@@"
-    echo "@@@@ $1"
-    echo "@@@@@@@@@@@@@@@@@@@@@@@@@@"
-}
 
 # Run install scripts
 ./10manual-installs.sh

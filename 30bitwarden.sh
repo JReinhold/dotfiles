@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
-
+#######################################
+# BITWARDEN
+# Logs in and gets secret from Bitwarden vaults
+#######################################
+source ./05functions.sh
 announce "Getting secrets from Bitwarden vault - log in to Bitwarden:"
 
 # Log in to Bitwarden CLI and set BW_SESSION variable. retry up to 5 times if password fails

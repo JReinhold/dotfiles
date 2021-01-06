@@ -1,10 +1,16 @@
 #!/usr/bin/env bash
+########################################
+# SETTINGS
+# Setting system-level settings
+########################################
+source ./05functions.sh
+announce "Configuring system-level settings"
 
 ########################################
 # DOCK MANAGEMENT
 # Removes and inserts items in the dock
 ########################################
-echo "----- SETTING UP DOCK ITEMS --------"
+announce "Configuring dock"
 
 dockutil --remove all --no-restart
 dockutil --add '/Applications/Brave Browser.app' --no-restart
@@ -21,7 +27,7 @@ dockutil --add '/Applications' --view grid --display folder --sort name --sectio
 # SETTINGS
 # General MacOS settings
 ########################################
-echo "----- GENERAL MACOS SETTINGS --------"
+announce "Configuring general MacOS settings"
 
 # Close any open System Preferences panes, to prevent them from overriding
 # settings we’re about to change
@@ -40,14 +46,14 @@ duti default-applications
 # FONTS
 # Installing essential fonts
 ########################################
-echo "----- INSTALLING FONTS --------"
+announce "Installing fonts"
 
 cp ./fonts/* /Library/Fonts
 
 ###############################################################################
 # General UI/UX                                                               #
 ###############################################################################
-echo "----- SETTING UI --------"
+announce "Configuring UI settings"
 
 # Dark mode in Dock and status bar
 defaults write NSGlobalDomain AppleInterfaceStyle Dark
@@ -97,16 +103,9 @@ defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
 ###############################################################################
-# SSD-specific tweaks                                                         #
-###############################################################################
-
-# Enable hibernation (drains battery less when sleeping)
-sudo pmset -a hibernatemode 25
-
-###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
 ###############################################################################
-echo "----- SETTING INPUT --------"
+announce "Configuring input settings"
 
 # Trackpad: enable tap to click for this user and for the login screen
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
@@ -136,7 +135,7 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 15
 ###############################################################################
 # Screen                                                                      #
 ###############################################################################
-echo "----- SETTING SCREEN --------"
+announce "Configuring screen settings"
 
 # Prefer tabs when opening documents: 'always', 'fullscreen', 'manual'
 defaults write NSGlobalDomain AppleWindowTabbingMode -string 'always'
@@ -164,7 +163,7 @@ sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutio
 ###############################################################################
 # Finder                                                                      #
 ###############################################################################
-echo "----- SETTING FINDER --------"
+announce "Configuring Finder settings"
 
 # Finder: disable window animations and Get Info animations
 defaults write com.apple.finder DisableAllAnimations -bool true
@@ -262,7 +261,7 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict \
 ###############################################################################
 # Dock, Dashboard, and hot corners                                            #
 ###############################################################################
-echo "----- SETTING DOCK --------"
+announce "Configuring misc features"
 
 # Dock orientation: 'left', 'bottom', 'right'
 defaults write com.apple.dock 'orientation' -string 'left'
@@ -323,7 +322,7 @@ defaults write com.apple.dock wvous-br-modifier -int 0
 ###############################################################################
 # Safari & WebKit                                                             #
 ###############################################################################
-echo "----- SETTING SAFARI --------"
+announce "Configuring Safari and WebKit settings"
 
 # Privacy: don’t send search queries to Apple
 defaults write com.apple.Safari UniversalSearchEnabled -bool false
@@ -412,7 +411,7 @@ defaults write com.apple.Safari InstallExtensionUpdatesAutomatically -bool true
 ###############################################################################
 # Terminal			                                                          #
 ###############################################################################
-echo "----- SETTING TERMINAL --------"
+announce "Configuring default Terminal settings"
 
 # Only use UTF-8 in Terminal.app
 defaults write com.apple.terminal StringEncodings -array 4
@@ -478,7 +477,7 @@ defaults write com.apple.Terminal ShowLineMarks -int 0
 ###############################################################################
 # Time Machine                                                                #
 ###############################################################################
-echo "----- SETTING GENERAL UTILITIES --------"
+announce "Configuring Time Machine settings"
 
 # Prevent Time Machine from prompting to use new hard drives as backup volume
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
@@ -489,6 +488,7 @@ hash tmutil &> /dev/null && sudo tmutil disablelocal
 ###############################################################################
 # Activity Monitor                                                            #
 ###############################################################################
+announce "Configuring Activity Monitor settings"
 
 # Show the main window when launching Activity Monitor
 defaults write com.apple.ActivityMonitor OpenMainWindow -bool true
@@ -504,8 +504,9 @@ defaults write com.apple.ActivityMonitor SortColumn -string "CPUUsage"
 defaults write com.apple.ActivityMonitor SortDirection -int 0
 
 ###############################################################################
-# TextEdit, and Disk Utility                   #
+# TextEdit, and Disk Utility                                                  #
 ###############################################################################
+announce "Configuring TextEdit and Disk Utility settings"
 
 # Use plain text mode for new TextEdit documents
 defaults write com.apple.TextEdit RichText -int 0
@@ -523,6 +524,7 @@ defaults write com.apple.QuickTimePlayerX MGPlayMovieOnOpen -bool true
 ###############################################################################
 # Mac App Store                                                               #
 ###############################################################################
+announce "Configuring Mac App Store settings"
 
 # Enable the WebKit Developer Tools in the Mac App Store
 defaults write com.apple.appstore WebKitDeveloperExtras -bool true
@@ -548,6 +550,7 @@ defaults write com.apple.commerce AutoUpdate -bool true
 ###############################################################################
 # Photos                                                                      #
 ###############################################################################
+announce "Configuring Photos settings"
 
 # Prevent Photos from opening automatically when devices are plugged in
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
@@ -555,6 +558,7 @@ defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 ###############################################################################
 # Messages                                                                    #
 ###############################################################################
+announce "Configuring Messages settings"
 
 # Disable smart quotes as it’s annoying for messages that contain code
 defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticQuoteSubstitutionEnabled" -bool false
@@ -565,6 +569,7 @@ defaults write com.apple.messageshelper.MessageController SOInputLineSettings -d
 ###############################################################################
 # Google Chrome & Google Chrome Canary                                        #
 ###############################################################################
+announce "Configuring Chrome settings"
 
 # Disable the all too sensitive backswipe on trackpads
 defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
@@ -585,6 +590,7 @@ defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool t
 ###############################################################################
 # Transmission.app                                                            #
 ###############################################################################
+announce "Configuring Transmission settings"
 
 # Use `~/Documents/Torrents` to store incomplete downloads
 defaults write org.m0k.transmission UseIncompleteDownloadFolder -bool true
@@ -620,7 +626,7 @@ defaults write org.m0k.transmission RandomPort -bool true
 ###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
-echo "----- KILLING APPS --------"
+announce "Killing apps"
 
 
 for app in "Activity Monitor" \
@@ -635,4 +641,5 @@ for app in "Activity Monitor" \
 	"Transmission"; do
 	killall "${app}" &> /dev/null
 done
-echo "Done. Note that some of these changes require a logout/restart to take effect."
+
+announce "Done configuring settings - Some of the changes require restarting to take effect."

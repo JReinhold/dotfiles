@@ -1,17 +1,10 @@
 #!/usr/bin/env bash
-
 #######################################
 # CLI-SETOUP
 # Installs CLI-tools
 #######################################
+source ./05functions.sh
 announce "Installing CLI tools"
-
-
-# Install tools with brew, and announce it
-brewi () {
-    announce $*
-    brew install $*
-}
 
 # terminal-notifier - used when installing casks later, see 50apps.sh
 brewi terminal-notifier
