@@ -4,8 +4,7 @@
 # MACKUP
 # Restores application preferences
 #######################################
-
-echo "----- RESTORING MACKUPS --------"
+announce "Restoring mackups"
 
 ln .mackup.cfg ~
 mackup restore

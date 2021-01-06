@@ -1,9 +1,16 @@
 #!/usr/bin/env bash
 
-echo "----- GETTING SECRETS FROM BITWARDEN VAULT --------"
-echo "Log in to Bitwarden:"
+announce "Getting secrets from Bitwarden vault - log in to Bitwarden:"
 
-BW_SESSION=$(bw login --raw)
+# Log in to Bitwarden CLI and set BW_SESSION variable. retry up to 5 times if password fails
+bwlogin(){
+    n=0
+    until [ "$n" -ge 5 ]
+    do
+        BW_SESSION=$(bw login --raw) && break
+        n=$((n+1))
+    done
+}
 
 # Add Fontawesome Pro NPM token to env variables
 FONTAWSOME_NPM_TOKEN=$(bw get item ffee47d6-b143-47bd-a06d-ac2c0126726b --session ${BW_SESSION} | jq '.fields | .[0].value')

@@ -7,23 +7,26 @@ mkdir ~/dev
 brew doctor
 brew update
 
-#Run install scripts
-./manual-installs.sh
-./clis.sh
-./bitwarden.sh
-./mackup.sh
-./apps.sh
-./node.sh
-./settings.sh
+# Highly readable echo to announce what is going on
+announce () {
+    echo "@@@@@@@@@@@@@@@@@@@@@@@@@@"
+    echo "@@@@ $1"
+    echo "@@@@@@@@@@@@@@@@@@@@@@@@@@"
+}
 
-cp .editorconfig ~/.editorconfig
-cp .gitignore ~/.gitignore_global
-git config --global core.excludesfile '~/.gitignore_global'
+# Run install scripts
+./10manual-installs.sh
+./20clis.sh
+./30bitwarden.sh
+./40mackup.sh
+./50apps.sh
+./60node.sh
+./70settings.sh
 
 ########################################
 # FINALS
 ########################################
-echo "----- DONE - CLEANING UP --------"
+announce "Installs done - cleaning up"
 brew cleanup
 brew doctor
 
@@ -32,7 +35,7 @@ brew list >> ~/Desktop/appList.txt
 brew cask list >> ~/Desktop/appList.txt
 mas list >> ~/Desktop/appList.txt
 printf "\n\n"
-echo "DONE"
+announce "All done"
 echo "A list of the apps installed have been placed on your desktop: appList.txt"
 echo "opening..."
 open ~/Desktop/appList.txt
