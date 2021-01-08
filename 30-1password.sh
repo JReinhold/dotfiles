@@ -9,12 +9,23 @@ announce "Getting secrets from 1Password vault - log in to 1Password:"
 # Ensure CLI is up-to-date
 op update
 
-OP_SESSION=$(op signin --raw)
+# Sign in to 1Password CLI and set OP_SESSION variable. retry up to 5 times if password fails
+opsignin(){
+    n=0
+    until [ "$n" -ge 5 ]
+    do
+        OP_SESSION=$(op signin --raw my jeppe@hey.com) && break
+        n=$((n+1))
+    done
+}
+opsignin
 
 # Add Fontawesome Pro NPM token to env variables
-FONTAWSOME_NPM_TOKEN=$(op get item ffee47d6-b143-47bd-a06d-ac2c0126726b --session ${BW_SESSION} | jq '.fields | .[0].value')
+FONTAWSOME_NPM_TOKEN=$(op get item ff2e37is2nbabkggbcfsqsho7y --session ${OP_SESSION} | jq '.details.sections | .[0].fields | .[1].v')
 echo "export FONTAWESOME_NPM_TOKEN=${FONTAWSOME_NPM_TOKEN}" >> secrets.sh
+chmod 755 secrets.sh
 
 # Add SSH keys
-bw get item 46f79f8e-6850-420b-953b-ac240125c686 --session ${BW_SESSION} | jq --raw-output '.notes' > ~/.ssh/id_rsa
-bw get item b09b8552-7838-4001-891e-ac240127c093 --session ${BW_SESSION} | jq --raw-output '.notes' > ~/.ssh/id_rsa.pub
+mkdir ~/.ssh
+op get document ct4qum3zwfd4pbbyxabya5lcri --output ~/.ssh/lolid_rsa --session $OP_SESSION
+op get document wq5f46kfp5ekjdjt47jbazrmka --output ~/.ssh/lolid_rsa.pub --session $OP_SESSION

@@ -150,3 +150,6 @@ export PATH=$PATH:~/.local/bin
 # contains global secrets, gitignored from dotfiles
 source ~/dev/open-source/dotfiles/secrets.sh
 source /Users/jeppe/.config/broot/launcher/bash/br
+
+# add 1Password CLI completion
+eval "$(op completion zsh)"; compdef _op op
