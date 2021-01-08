@@ -31,7 +31,9 @@ brewi --cask 1password-cli
 brewi mas
 
 # .NET SDK - Development
+brew tap isen-ng/dotnet-sdk-versions
 brewi dotnet-sdk
+brewi dotnet-sdk3-1-400
 dotnet tool install --global dotnet-ef
 
 # Git and Git Flow - add Git Flow extension to Git
