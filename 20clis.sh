@@ -38,11 +38,10 @@ dotnet tool install --global dotnet-ef
 # NOTE: git is already installed by default on OSX, but it's outdated, this ensures latest version and Bash Completion
 brewi git git-flow-avh
 rm ~/.gitconfig ~/.gitignore_global
-ln -s ./gitconfig.symlink ~/.gitconfig
-ln -s ./gitignore_global.symlink ~/.gitignore_global
-git config --global core.excludesfile '~/.gitignore_global'
+ln -s $PWD/gitconfig.symlink ~/.gitconfig
+ln -s $PWD/gitignore_global.symlink ~/.gitignore_global
 
-ln -s .editorconfig ~/.editorconfig
+ln -s $PWD/editorconfig.symlink ~/.editorconfig
 
 # Various clis, to enhance terminal workflow
 brewi the_silver_searcher bat fzf tig jq
@@ -57,4 +56,4 @@ chsh -s $(which zsh)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 #  symlink Zsh configuration to this directory
 rm ~/.zshrc
-ln -s ./.zshrc ~/.zshrc
+ln -s $PWD/.zshrc ~/.zshrc
