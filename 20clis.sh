@@ -38,10 +38,12 @@ dotnet tool install --global dotnet-ef
 
 # Git and Git Flow - add Git Flow extension to Git
 # NOTE: git is already installed by default on OSX, but it's outdated, this ensures latest version and Bash Completion
-brewi git git-flow-avh
+brewi git git-lfs git-flow-avh
 rm ~/.gitconfig ~/.gitignore_global
 ln -s $PWD/gitconfig.symlink ~/.gitconfig
 ln -s $PWD/gitignore_global.symlink ~/.gitignore_global
+git lfs install
+sudo git lfs install --system
 
 ln -s $PWD/editorconfig.symlink ~/.editorconfig
 
