@@ -12,7 +12,7 @@
     cmd = code --wait --new-window --diff $LOCAL $REMOTE
 [user]
 	name = Jeppe Reinhold
-	email = jeppereinhold@gmail.com
+	email = jeppe@hey.com
 [commit]
 	template = /Users/jeppe/.stCommitMsg
 [filter "lfs"]

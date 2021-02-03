@@ -16,7 +16,7 @@ org.videolan.vlc aac all
 org.videolan.vlc m4a all
 org.videolan.vlc mp3 all
 
-# text
+# text and code
 com.microsoft.VSCode ts all
 com.microsoft.VSCode tsx all
 com.microsoft.VSCode js all
@@ -35,9 +35,17 @@ com.microsoft.VSCode xml all
 com.microsoft.VSCode iml all
 com.microsoft.VSCode yml all
 com.microsoft.VSCode yaml all
+com.microsoft.VSCode toml all
 com.microsoft.VSCode Dockerfile all
+com.microsoft.VSCode csproj all
+com.microsoft.VSCode cs all
+com.jetbrains.rider sln all
+com.microsoft.VSCode plist all
 # html doesn't work, see https://github.com/moretension/duti/issues/34
 # com.microsoft.VSCode html all
+
+# dot configs
+com.microsoft.VSCode gitignore all
 
 # misc
 com.aone.keka zip all

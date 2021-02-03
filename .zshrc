@@ -59,15 +59,27 @@ ZSH_CUSTOM=~/dev/open-source/dotfiles/oh-my-custom-zsh
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  docker
+  docker-compose
+  dotnet
+  frontend-search
+  fzf
   git
-  osx
+  jsontools
+  kubectl
   node
+  osx
+  react-native
+  sudo
+  timer
+  vscode
   yarn
   z
   zsh-completions
   zsh-autosuggestions
   zsh-syntax-highlighting
   zsh-history-substring-search
+  web-search
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -138,3 +150,6 @@ export PATH=$PATH:~/.local/bin
 # contains global secrets, gitignored from dotfiles
 source ~/dev/open-source/dotfiles/secrets.sh
 source /Users/jeppe/.config/broot/launcher/bash/br
+
+# add 1Password CLI completion
+eval "$(op completion zsh)"; compdef _op op
