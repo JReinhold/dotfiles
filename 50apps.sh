@@ -21,7 +21,7 @@ caski firefox # https://www.mozilla.org/firefox
 
 # Fira Code Font - Monospace font with ligatures
 # https://github.com/tonsky/FiraCode
-brew tap caskroom/fonts
+brew tap homebrew/cask-fonts
 caski font-fira-code
 
 # Visual Studio Code - Lightweight editor
@@ -35,6 +35,10 @@ caski rider
 # Alfred - Launcher - NEEDS LICENCE
 # https://alfredapp.com
 caski alfred3
+
+# Logitech Options - configure Logiceh peripherals
+# https://www.logitech.com/en-us/product/options
+caski logitech-options
 
 # BetterTouchTool - tool to customize mouse and keyboard
 # https://folivora.ai
@@ -78,8 +82,8 @@ caski iterm2
 cp ./com.googlecode.iterm2.plist ~/Library/Preferences/
 
 # OpenJDK - Java Development Kit, needed for Android SDK
-# https://openjdk.java.net
-caski java
+# https://adoptopenjdk.net/
+caski adoptopenjdk
 
 # Android Studio
 # https://developer.android.com/studio

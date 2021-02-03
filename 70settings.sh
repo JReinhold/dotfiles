@@ -14,8 +14,7 @@ announce "Configuring dock"
 
 dockutil --remove all --no-restart
 dockutil --add '/Applications/Brave Browser.app' --no-restart
-dockutil --add '/Applications/Caprine.app' --no-restart
-dockutil --add '/Applications/Slack.app' --no-restart
+dockutil --add '/Applications/Messenger.app' --no-restart
 dockutil --add '/Applications/Visual Studio Code.app' --no-restart
 
 #iCloud Downloads folder, needs to exist beforehand, at root iCloud Drive
@@ -40,7 +39,8 @@ sudo -v
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Set default application handlers for different file types
-duti default-applications
+# https://github.com/moretension/duti
+duti ./default-applications.txt
 
 ########################################
 # FONTS
@@ -264,7 +264,7 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict \
 announce "Configuring misc features"
 
 # Dock orientation: 'left', 'bottom', 'right'
-defaults write com.apple.dock 'orientation' -string 'left'
+defaults write com.apple.dock 'orientation' -string 'bottom'
 
 # Enable highlight hover effect for the grid view of a stack (Dock)
 defaults write com.apple.dock mouse-over-hilite-stack -bool true
