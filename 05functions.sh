@@ -18,13 +18,14 @@ manual () {
 
 # Install tools with brew, and announce it
 brewi () {
-    announce $*
+    announce "Installing $* with brew"
     brew install $*
 }
 
 # Install function, with notification support
 # first parameter is app to install
 caski () {
+    announce "Installing $* with brew cask"
 	if brew install --cask $* ; then
 		terminal-notifier -message "$1 installed successfully 🎉🎈" -title "🍺 Cask Install" -sound default -timeout 10
 	else
