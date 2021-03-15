@@ -13,11 +13,12 @@ mkdir ~/dev
 brew doctor
 brew update
 brew tap homebrew/cask-drivers
+brew tap homebrew/cask-versions
 
 # Run install scripts
 ./10manual-installs.sh
 ./20clis.sh
-./30bitwarden.sh
+./30-1password.sh
 ./40mackup.sh
 ./50apps.sh
 ./60node.sh
@@ -30,9 +31,6 @@ announce "Installs done - cleaning up"
 brew cleanup
 brew doctor
 
-printf "\nINSTALLED APPS\n" >> ~/Desktop/appList.txt
-brew list --formulae >> ~/Desktop/appList.txt
-brew list --cask >> ~/Desktop/appList.txt
 mas list >> ~/Desktop/appList.txt
 printf "\n\n"
 announce "All done"

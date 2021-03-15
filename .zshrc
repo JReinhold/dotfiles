@@ -82,6 +82,9 @@ plugins=(
   web-search
 )
 
+# Allow insecurely source completions from all folders
+ZSH_DISABLE_COMPFIX=true
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration

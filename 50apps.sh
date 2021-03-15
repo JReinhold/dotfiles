@@ -6,17 +6,13 @@
 source ./05functions.sh
 announce "Installing cask apps"
 
-# Bitwarden - password manager
-# https://bitwarden.com
-caski bitwarden
-
 # 1Password - password manager
 # https://1password.com
 caski 1password
  
 # Browsers
-caski google-chrome # https://google.com/chrome
 caski brave-browser # https://brave.com
+caski google-chrome # https://google.com/chrome
 caski firefox # https://www.mozilla.org/firefox
 
 # Fira Code Font - Monospace font with ligatures
@@ -27,10 +23,6 @@ caski font-fira-code
 # Visual Studio Code - Lightweight editor
 # https://code.visualstudio.com
 caski visual-studio-code
-
-# JetBrains Rider - Non-lightweight C# editor
-# https://www.jetbrains.com/rider/
-caski rider
 
 # Alfred - Launcher - NEEDS LICENCE
 # https://alfredapp.com
@@ -72,14 +64,14 @@ caski figma
 # https://spotify.com
 caski spotify
 
-# Postman - API-tester
-# https://postman.com
-caski postman
-
 # iTerm2 - terminal
 # https://www.iterm2.com
 caski iterm2
 cp ./com.googlecode.iterm2.plist ~/Library/Preferences/
+
+# Postman - API-tester
+# https://postman.com
+caski postman
 
 # OpenJDK - Java Development Kit, needed for Android SDK
 # https://adoptopenjdk.net/
@@ -104,29 +96,9 @@ caski arduino
 # https://aerialscreensaver.github.io
 caski aerial
 
-# Transmission - torrent downloader
-# https://transmissionbt.com
-caski transmission
-
 # NordVPN - VPN
 # https://nordvpn.com
 caski nordvpn
-
-# VLC - media player
-# https://videolan.org
-caski vlc
-
-# Teensy - Flashing tool for teensy boards (ErogDox keyboard)
-# https://www.pjrc.com/teensy/loader.html
-caski teensy
-
-# Keka - Archive manager (zip, rar, dmg, etc.)
-# https://keka.io
-caski keka
-
-# Handbrake - media encoder
-# https://handbrake.fr
-caski handbrake
 
 # Docker - VM and container handler
 # https://docker.com
@@ -151,6 +123,26 @@ caski steam
 # https://teamviewer.com
 caski teamviewer
 
+# VLC - media player
+# https://videolan.org
+caski vlc
+
+# Teensy - Flashing tool for teensy boards (ErogDox keyboard)
+# https://www.pjrc.com/teensy/loader.html
+caski teensy
+
+# Keka - Archive manager (zip, rar, dmg, etc.)
+# https://keka.io
+caski keka
+
+# Handbrake - media encoder
+# https://handbrake.fr
+caski handbrake
+
+# Transmission - torrent downloader
+# https://transmissionbt.com
+caski transmission
+
 # Microsoft 365 suite - NEEDS LICENSE
 # https://www.microsoft.com/da-dk/microsoft-365/mac/microsoft-365-for-mac
 caski microsoft-word
@@ -173,7 +165,7 @@ mas install 409183694
 # Pages
 mas install 409201541
 # Numbers
-mas install 4092038250
+mas install 409203825
 
 # Xcode - Apple Development tools - BEWARE, TAKES A LONG TIME!!
 #mas install 497799835

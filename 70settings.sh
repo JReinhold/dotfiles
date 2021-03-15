@@ -55,6 +55,10 @@ cp ./fonts/* /Library/Fonts
 ###############################################################################
 announce "Configuring UI settings"
 
+# Disable Spotlight CMD+SPACE shortcut
+/usr/libexec/PlistBuddy ~/Library/Preferences/com.apple.symbolichotkeys.plist -c \
+  "Set AppleSymbolicHotKeys:64:enabled false"
+
 # Dark mode in Dock and status bar
 defaults write NSGlobalDomain AppleInterfaceStyle Dark
 
@@ -265,6 +269,9 @@ announce "Configuring misc features"
 
 # Dock orientation: 'left', 'bottom', 'right'
 defaults write com.apple.dock 'orientation' -string 'bottom'
+
+# Don't show Recent Items in Dock
+defaults write com.apple.dock show-recents -bool FALSE
 
 # Enable highlight hover effect for the grid view of a stack (Dock)
 defaults write com.apple.dock mouse-over-hilite-stack -bool true

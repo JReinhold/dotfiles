@@ -6,9 +6,13 @@
 
 # Highly readable echo to announce what is going on
 announce () {
+    echo " "
     echo "@@@@@@@@@@@@@@@@@@@@@@@@@@"
-    echo "@@@@ $1"
+    echo "@"
+    echo "@ $1"
+    echo "@"
     echo "@@@@@@@@@@@@@@@@@@@@@@@@@@"
+    echo " "
 }
 
 # utility to add an app to manually install to the appList.txt file on desktop
@@ -20,6 +24,7 @@ manual () {
 brewi () {
     announce "Installing $* with brew"
     brew install $*
+    printf "INSTALLED: $*\n" >> ~/Desktop/appList.txt
 }
 
 # Install function, with notification support
@@ -28,6 +33,7 @@ caski () {
     announce "Installing $* with brew cask"
 	if brew install --cask $* ; then
 		terminal-notifier -message "$1 installed successfully 🎉🎈" -title "🍺 Cask Install" -sound default -timeout 10
+        printf "INSTALLED: $*\n" >> ~/Desktop/appList.txt
 	else
 		printf "FAILED: $*\n" >> ~/Desktop/appList.txt
 		terminal-notifier -message " ⛔️ $1 INSTALLATION FAILED" -title "⚠️  Cask Install" -sound default -timeout 10

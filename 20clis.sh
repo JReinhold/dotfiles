@@ -15,17 +15,15 @@ brewi wget
 # dockutil - CLI to manage dock items
 brewi dockutil
 
+# duti - default applications manager
+brewi duti
+
 # broot - File browser CLI
 brewi broot
-
-# Azure CLI
-brewi azure-cli
-
-# bitwarden CLI - password manager
-brewi bitwarden-cli
+broot install
 
 # 1Password CLI - Password manager
-brewi --cask 1password-cli
+caski 1password-cli
 
 # mas-cli - Mac App Store CLI
 brewi mas
