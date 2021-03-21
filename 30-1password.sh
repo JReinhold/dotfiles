@@ -27,5 +27,5 @@ chmod 755 secrets.sh
 
 # Add SSH keys
 mkdir ~/.ssh
-op get document 25oyziwv3rcpxcg4ebs5jdxfey --output ~/.ssh/lolid_rsa --session $OP_SESSION
-op get document xvcpevidlnf6rmlzyhfncc63ku --output ~/.ssh/lolid_rsa.pub --session $OP_SESSION
+op get document 25oyziwv3rcpxcg4ebs5jdxfey --output ~/.ssh/id_rsa --session $OP_SESSION
+op get document xvcpevidlnf6rmlzyhfncc63ku --output ~/.ssh/id_rsa.pub --session $OP_SESSION
