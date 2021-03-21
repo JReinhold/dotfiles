@@ -298,6 +298,9 @@ defaults write com.apple.dock dashboard-in-overlay -bool true
 # Don’t automatically rearrange Spaces based on most recent use
 defaults write com.apple.dock mru-spaces -bool false
 
+# Displays should not have separate spaces
+defaults write com.apple.spaces spans-displays -bool true
+
 # Disable Dock magnification on hover
 defaults write com.apple.dock magnification -bool false
 
