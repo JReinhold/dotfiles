@@ -67,7 +67,8 @@ caski spotify
 # iTerm2 - terminal
 # https://www.iterm2.com
 caski iterm2
-cp ./com.googlecode.iterm2.plist ~/Library/Preferences/
+defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -int 1
+defaults write com.googlecode.iterm2 PrefsCustomFolder -string "~/dev/open-source/dotfiles/iterm2-preferences"
 
 # Postman - API-tester
 # https://postman.com
