@@ -59,6 +59,7 @@ ZSH_CUSTOM=~/dev/open-source/dotfiles/oh-my-custom-zsh
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  asdf
   docker
   docker-compose
   dotnet
@@ -73,13 +74,13 @@ plugins=(
   sudo
   timer
   vscode
+  web-search
   yarn
   z
   zsh-completions
   zsh-autosuggestions
   zsh-syntax-highlighting
   zsh-history-substring-search
-  web-search
 )
 
 # Allow insecurely source completions from all folders
@@ -150,9 +151,18 @@ export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:~/.local/bin
 
+export PATH="$PATH:$(yarn global bin)" 
+
 # contains global secrets, gitignored from dotfiles
 source ~/dev/open-source/dotfiles/secrets.sh
 source /Users/jeppe/.config/broot/launcher/bash/br
 
 # add 1Password CLI completion
 eval "$(op completion zsh)"; compdef _op op
+
+
+#### FIG ENV VARIABLES ####
+# [[ -s ~/.fig/fig.sh ]] && source ~/.fig/fig.sh
+#### END FIG ENV VARIABLES ####
+
+

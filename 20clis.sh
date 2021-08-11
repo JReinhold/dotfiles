@@ -59,3 +59,6 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 #  symlink Zsh configuration to this directory
 rm ~/.zshrc
 ln -s $PWD/.zshrc ~/.zshrc
+
+# asdf CLI
+ln -s $PWD/.tool-versions ~/.tool-versions
