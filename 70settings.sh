@@ -298,6 +298,9 @@ defaults write com.apple.dock dashboard-in-overlay -bool true
 # Don’t automatically rearrange Spaces based on most recent use
 defaults write com.apple.dock mru-spaces -bool false
 
+# Displays should not have separate spaces
+defaults write com.apple.spaces spans-displays -bool true
+
 # Disable Dock magnification on hover
 defaults write com.apple.dock magnification -bool false
 
@@ -574,23 +577,27 @@ defaults write com.apple.messageshelper.MessageController SOInputLineSettings -d
 defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "continuousSpellCheckingEnabled" -bool false
 
 ###############################################################################
-# Google Chrome & Google Chrome Canary                                        #
+# Brave Browser, Google Chrome & Google Chrome Canary                                        #
 ###############################################################################
 announce "Configuring Chrome settings"
 
 # Disable the all too sensitive backswipe on trackpads
+defaults write com.brave.Browser AppleEnableSwipeNavigateWithScrolls -bool false
 defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
 defaults write com.google.Chrome.canary AppleEnableSwipeNavigateWithScrolls -bool false
 
 # Disable the all too sensitive backswipe on Magic Mouse
+defaults write com.brave.Browser AppleEnableMouseSwipeNavigateWithScrolls -bool false
 defaults write com.google.Chrome AppleEnableMouseSwipeNavigateWithScrolls -bool false
 defaults write com.google.Chrome.canary AppleEnableMouseSwipeNavigateWithScrolls -bool false
 
 # Use the system-native print preview dialog
+defaults write com.brave.Browser DisablePrintPreview -bool true
 defaults write com.google.Chrome DisablePrintPreview -bool true
 defaults write com.google.Chrome.canary DisablePrintPreview -bool true
 
 # Expand the print dialog by default
+defaults write com.brave.Browser PMPrintingExpandedStateForPrint2 -bool true
 defaults write com.google.Chrome PMPrintingExpandedStateForPrint2 -bool true
 defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool true
 
