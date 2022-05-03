@@ -59,6 +59,7 @@ ZSH_CUSTOM=~/dev/open-source/dotfiles/oh-my-custom-zsh
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  asdf
   docker
   docker-compose
   dotnet
@@ -73,13 +74,13 @@ plugins=(
   sudo
   timer
   vscode
+  web-search
   yarn
   z
   zsh-completions
   zsh-autosuggestions
   zsh-syntax-highlighting
   zsh-history-substring-search
-  web-search
 )
 
 HOMEBREW_NO_AUTO_UPDATE=1
@@ -151,6 +152,8 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:~/.local/bin
+
+export PATH="$PATH:$(yarn global bin)" 
 
 # contains global secrets, gitignored from dotfiles
 source ~/dev/open-source/dotfiles/secrets.sh
