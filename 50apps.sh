@@ -11,7 +11,7 @@ announce "Installing cask apps"
 caski 1password
  
 # Browsers
-caski brave-browser # https://brave.com
+caski vivaldi # https://vivaldi.com
 caski google-chrome # https://google.com/chrome
 caski firefox # https://www.mozilla.org/firefox
 
@@ -24,9 +24,9 @@ caski font-fira-code
 # https://code.visualstudio.com
 caski visual-studio-code
 
-# Alfred - Launcher - NEEDS LICENCE
-# https://alfredapp.com
-caski alfred3
+# Raycast
+# https://raycast.app
+caski raycast
 
 # Logitech Options - configure Logiceh peripherals
 # https://www.logitech.com/en-us/product/options
@@ -35,10 +35,6 @@ caski logitech-options
 # BetterTouchTool - tool to customize mouse and keyboard
 # https://folivora.ai
 caski bettertouchtool
-
-# HyperDock - Manage Dock and windows - NEEDS LICENSE
-# https://bahoom.com/hyperdock
-# caski hyperdock
 
 # iStat Menus - Hardware Monitor - NEEDS LICENSE
 # https://bjango.com/mac/istatmenus
@@ -64,29 +60,27 @@ caski figma
 # https://spotify.com
 caski spotify
 
-# iTerm2 - terminal
-# https://www.iterm2.com
-caski iterm2
-cp ./com.googlecode.iterm2.plist ~/Library/Preferences/
+# Warp - terminal
+# https://warp.dev
+caski warp
 
 # Postman - API-tester
 # https://postman.com
 caski postman
 
 # OpenJDK - Java Development Kit, needed for Android SDK
-# https://adoptopenjdk.net/
-caski adoptopenjdk
+# caski temurin
 
 # Android Studio
 # https://developer.android.com/studio
-caski android-studio
-export ANDROID_HOME=${HOME}/Library/Android/sdk
-export PATH=${PATH}:${ANDROID_HOME}/tools
-export PATH=${PATH}:${ANDROID_HOME}/platform-tools
+# caski android-studio
+# export ANDROID_HOME=${HOME}/Library/Android/sdk
+# export PATH=${PATH}:${ANDROID_HOME}/tools
+# export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 
 # Arduino IDE
 # https://www.arduino.cc/en/main/software
-caski arduino
+# caski arduino
 
 # Fluor - enable/disable fn keys for specific apps
 # https://fluorapp.net
@@ -98,15 +92,15 @@ caski aerial
 
 # NordVPN - VPN
 # https://nordvpn.com
-caski nordvpn
+# caski nordvpn
 
 # Docker - VM and container handler
 # https://docker.com
 caski docker
 
-# HEY - e-mail app
-# https://hey.com
-caski hey
+# Fmail - client for Fastmail
+# http://fmail-app.fr
+caski fmail2
 
 # Notion - All things note app
 # https://notion.so

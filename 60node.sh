@@ -7,9 +7,10 @@ source ./05functions.sh
 announce "Installing Node.js and tools"
 
 # install node.js LTS with npm - JavaScript runner and package manager
-brew install node@14
+brew install node@16
 npm update -g npm
 brew install yarn
+brew install pnpm
 
 # ESLint - To lint JavaScript files
 yarn global add eslint

@@ -68,7 +68,7 @@ plugins=(
   jsontools
   kubectl
   node
-  osx
+  macos
   react-native
   sudo
   timer
@@ -81,6 +81,8 @@ plugins=(
   zsh-history-substring-search
   web-search
 )
+
+HOMEBREW_NO_AUTO_UPDATE=1
 
 # Allow insecurely source completions from all folders
 ZSH_DISABLE_COMPFIX=true
@@ -114,7 +116,7 @@ export LANG=en_GB.UTF-8
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
+# alias zshonfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # default system user, to remove "user@hostname" in the prompt

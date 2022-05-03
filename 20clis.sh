@@ -18,21 +18,11 @@ brewi dockutil
 # duti - default applications manager
 brewi duti
 
-# broot - File browser CLI
-brewi broot
-broot install
-
 # 1Password CLI - Password manager
 caski 1password-cli
 
 # mas-cli - Mac App Store CLI
 brewi mas
-
-# .NET SDK - Development
-brew tap isen-ng/dotnet-sdk-versions
-brewi dotnet-sdk
-brewi dotnet-sdk3-1-400
-dotnet tool install --global dotnet-ef
 
 # Git and Git Flow - add Git Flow extension to Git
 # NOTE: git is already installed by default on OSX, but it's outdated, this ensures latest version and Bash Completion
