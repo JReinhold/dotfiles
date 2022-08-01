@@ -28,6 +28,10 @@ caski visual-studio-code
 # https://raycast.app
 caski raycast
 
+# Centered - Productivity/focus/todo list
+# https://centered.app
+caski centered
+
 # Logitech Options - configure Logiceh peripherals
 # https://www.logitech.com/en-us/product/options
 caski logitech-options

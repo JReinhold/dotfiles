@@ -161,3 +161,8 @@ source /Users/jeppe/.config/broot/launcher/bash/br
 
 # add 1Password CLI completion
 eval "$(op completion zsh)"; compdef _op op
+
+# pnpm
+export PNPM_HOME="/Users/jeppe/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
