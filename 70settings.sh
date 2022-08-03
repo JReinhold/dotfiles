@@ -13,12 +13,12 @@ announce "Configuring system-level settings"
 announce "Configuring dock"
 
 dockutil --remove all --no-restart
-dockutil --add '/Applications/Brave Browser.app' --no-restart
-dockutil --add '/Applications/Messenger.app' --no-restart
+dockutil --add '/Applications/Arc.app' --no-restart
 dockutil --add '/Applications/Visual Studio Code.app' --no-restart
+dockutil --add '/Applications/Messenger.app' --no-restart
 
 #iCloud Downloads folder, needs to exist beforehand, at root iCloud Drive
-dockutil --add '~/Library/Mobile Documents/com~apple~CloudDocs/Downloads' --view list --display stack --sort name --section others --no-restart
+dockutil --add '~/Downloads' --view list --display stack --sort name --section others --no-restart
 dockutil --add '/Applications' --view grid --display folder --sort name --section others
 
 

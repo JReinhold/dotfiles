@@ -44,7 +44,7 @@ ZSH_THEME="agnoster"
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
@@ -62,20 +62,16 @@ plugins=(
   asdf
   docker
   docker-compose
-  dotnet
   frontend-search
   fzf
   git
   jsontools
-  kubectl
   node
   macos
-  react-native
   sudo
   timer
   vscode
   web-search
-  yarn
   z
   zsh-completions
   zsh-autosuggestions
@@ -137,27 +133,18 @@ AUTO_LS_COMMANDS=(ls-custom git-status)
 # give path autocompletion for arguments
 setopt magicequalsubst	
 
-# tabtab source for yarn package
-# uninstall by removing these lines or running `tabtab uninstall yarn`
-[[ -f ~/.config/yarn/global/node_modules/tabtab/.completions/yarn.zsh ]] && . ~/.config/yarn/global/node_modules/tabtab/.completions/yarn.zsh
-
 # tell pipenv to install environments to project root instead of ~/.local/share/virtualenvs
 export PIPENV_VENV_IN_PROJECT=true
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-export PATH=$PATH:~/.local/bin
-
-export PATH="$PATH:$(yarn global bin)" 
+# export ANDROID_HOME=$HOME/Library/Android/sdk
+# export PATH=$PATH:$ANDROID_HOME/emulator
+# export PATH=$PATH:$ANDROID_HOME/tools
+# export PATH=$PATH:$ANDROID_HOME/tools/bin
+# export PATH=$PATH:$ANDROID_HOME/platform-tools
+# export PATH=$PATH:~/.local/bin
 
 # contains global secrets, gitignored from dotfiles
 source ~/dev/open-source/dotfiles/secrets.sh
-source /Users/jeppe/.config/broot/launcher/bash/br
 
 # add 1Password CLI completion
 eval "$(op completion zsh)"; compdef _op op

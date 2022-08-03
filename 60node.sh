@@ -7,20 +7,20 @@ source ./05functions.sh
 announce "Installing Node.js and tools"
 
 # install node.js LTS with npm - JavaScript runner and package manager
-brew install node@16
+brewi node@18
+corepack enable
+corepack prepare pnpm@7.8.0 --activate
 npm update -g npm
-brew install yarn
-brew install pnpm
 
 # ESLint - To lint JavaScript files
-yarn global add eslint
+pnpm add --global eslint
 
 # Prettier - format files
-yarn global add prettier
+pnpm add --global prettier
 
 # Serve - To create a minimalistisk http server local
-yarn global add serve
+pnpm add --global serve
 
 # TypeScript compiler
-yarn global add typescript
+pnpm add --global typescript
 

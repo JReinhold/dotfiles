@@ -1,21 +1,10 @@
 # Shortcuts
-alias dl='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/Downloads'
-alias ldl='cd ~/Downloads'
+alias dl='cd ~/Downloads'
 alias dt='cd ~/Desktop'
 alias dev='cd ~/dev'
 
-# Brave Browser
-alias chrome='/Applications/Brave\ Browser.app/Contents/MacOS/Brave\ Browser'
-# Brave Browser Incognito mode
-alias chromei='/Applications/Brave\ Browser.app/Contents/MacOS/Brave\ Browser --incognito'
-
-# Google Chrome
-alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
-# Google Chrome Incognito mode
-alias chromei='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --incognito'
-
 # IP addresses
-alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
+alias ip='curl ifconfig.me'
 alias localip='ipconfig getifaddr en0'
 
 # Recursively delete `.DS_Store` files
@@ -72,9 +61,6 @@ function lh() {
 	echo "Forwarding localhost:$SRC_PORT"
 	ssh -R 80:localhost:$SRC_PORT ssh.localhost.run
 }
-
-# Android emulator
-alias emu='emulator -avd Pixel_2_API_27'
 
 ##########
 # Python #

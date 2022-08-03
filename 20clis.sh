@@ -19,7 +19,13 @@ brewi dockutil
 brewi duti
 
 # 1Password CLI - Password manager
-caski 1password-cli
+caski 1password/tap/1password-cli
+
+# colima - an alternative to Docker Desktop
+# https://www.swyx.io/running-docker-without-docker-desktop/
+brewi colima
+sudo curl -L https://github.com/docker/compose/releases/download/v2.9.0/docker-compose-darwin-aarch64 -o /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
 
 # mas-cli - Mac App Store CLI
 brewi mas

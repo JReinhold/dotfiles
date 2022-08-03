@@ -11,7 +11,6 @@ announce "Installing cask apps"
 caski 1password
  
 # Browsers
-caski vivaldi # https://vivaldi.com
 caski google-chrome # https://google.com/chrome
 caski firefox # https://www.mozilla.org/firefox
 
@@ -35,6 +34,10 @@ caski centered
 # Logitech Options - configure Logiceh peripherals
 # https://www.logitech.com/en-us/product/options
 caski logitech-options
+
+# Elgato Wave Link - control panel for Elgato Wave microphones
+# https://www.elgato.com/en/downloads
+caski elgato-wave-link
 
 # BetterTouchTool - tool to customize mouse and keyboard
 # https://folivora.ai
@@ -88,7 +91,7 @@ caski postman
 
 # Fluor - enable/disable fn keys for specific apps
 # https://fluorapp.net
-# caski fluor
+caski fluor
 
 # Aerial screensaver
 # https://aerialscreensaver.github.io
@@ -100,7 +103,8 @@ caski aerial
 
 # Docker - VM and container handler
 # https://docker.com
-caski docker
+# REPLACED BY COLIMA IN 20clis.sh
+# caski docker
 
 # Fmail - client for Fastmail
 # http://fmail-app.fr
@@ -110,24 +114,13 @@ caski fmail2
 # https://notion.so
 caski notion
 
-# Signal - Messaging app
-caski signal
-
 # Steam - Game launcher
 # https://steampowered.com
 caski steam
 
-# TeamViewer - remote desktop tool
-# https://teamviewer.com
-caski teamviewer
-
 # VLC - media player
 # https://videolan.org
 caski vlc
-
-# Teensy - Flashing tool for teensy boards (ErogDox keyboard)
-# https://www.pjrc.com/teensy/loader.html
-caski teensy
 
 # Keka - Archive manager (zip, rar, dmg, etc.)
 # https://keka.io
@@ -143,11 +136,11 @@ caski transmission
 
 # Microsoft 365 suite - NEEDS LICENSE
 # https://www.microsoft.com/da-dk/microsoft-365/mac/microsoft-365-for-mac
-caski microsoft-word
-caski microsoft-outlook
-caski microsoft-excel
-caski microsoft-powerpoint
-caski microsoft-teams
+# caski microsoft-word
+# caski microsoft-outlook
+# caski microsoft-excel
+# caski microsoft-powerpoint
+# caski microsoft-teams
 
 # Quicklook extensions - different extensions to the native quicklook to make it better with different file types
 caski qlcolorcode qlmarkdown quicklook-json webpquicklook qlvideo
