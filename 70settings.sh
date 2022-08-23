@@ -12,14 +12,15 @@ announce "Configuring system-level settings"
 ########################################
 announce "Configuring dock"
 
-dockutil --remove all --no-restart
-dockutil --add '/Applications/Arc.app' --no-restart
-dockutil --add '/Applications/Visual Studio Code.app' --no-restart
-dockutil --add '/Applications/Messenger.app' --no-restart
+dockutil --section apps --no-restart \
+	--remove all \
+	--add '/Applications/Arc.app' \
+	--add '/Applications/Visual Studio Code.app' \
+	--add '/Applications/Messenger.app' \
 
-#iCloud Downloads folder, needs to exist beforehand, at root iCloud Drive
-dockutil --add '~/Downloads' --view list --display stack --sort name --section others --no-restart
-dockutil --add '/Applications' --view grid --display folder --sort name --section others
+dockutil --section others \
+	--add '~/Downloads' --view list --display stack --sort name \
+	--add '/Applications' --view grid --display folder --sort name
 
 
 ########################################

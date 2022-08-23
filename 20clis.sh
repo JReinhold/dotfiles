@@ -13,7 +13,9 @@ brewi terminal-notifier
 brewi wget
 
 # dockutil - CLI to manage dock items
-brewi dockutil
+# brewi dockutil
+# temporary workaround https://github.com/kcrawford/dockutil/issues/127#issuecomment-1118733013
+caski hpedrorodrigues/tools/dockutil
 
 # duti - default applications manager
 brewi duti
