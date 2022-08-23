@@ -75,3 +75,15 @@ alias run='./manage.py runserver 0.0.0.0:8000'
 alias shell='./manage.py shell'
 alias dev='./manage.py runserver & ./manage.py livereload && fg'
 alias pop='yes | ./manage.py populate_db'
+
+
+##########
+# JavaScript #
+##########
+
+# Node version switcher
+# See https://notiz.dev/blog/how-to-manage-multiple-node-versions-on-mac
+alias node18='export PATH="/usr/local/opt/node@18/bin:$PATH"'
+alias node16='export PATH="/usr/local/opt/node@16/bin:$PATH"'
+alias node14='export PATH="/usr/local/opt/node@14/bin:$PATH"'
+
