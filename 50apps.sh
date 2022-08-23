@@ -75,10 +75,6 @@ caski spotify
 # https://warp.dev
 caski warp
 
-# Postman - API-tester
-# https://postman.com
-caski postman
-
 # OpenJDK - Java Development Kit, needed for Android SDK
 # caski temurin
 
