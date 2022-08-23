@@ -51,6 +51,10 @@ caski istat-menus5
 # https://rectangleapp.com
 caski rectangle
 
+# Alt-Tab
+# Better window switcher https://alt-tab-macos.netlify.app/
+caski alt-tab
+
 # Facebook Messenger app
 # https://messenger.com
 caski messenger
