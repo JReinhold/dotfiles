@@ -8,6 +8,7 @@ announce "Installing Node.js and tools"
 
 # install node.js LTS with npm - JavaScript runner and package manager
 brewi node@18
+brewi corepack
 corepack enable
 corepack prepare pnpm@7.8.0 --activate
 npm update -g npm

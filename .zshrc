@@ -143,6 +143,9 @@ export PIPENV_VENV_IN_PROJECT=true
 # export PATH=$PATH:$ANDROID_HOME/platform-tools
 # export PATH=$PATH:~/.local/bin
 
+# Make "python" point to "python3"
+PATH="/usr/local/opt/python/libexec/bin:$PATH"
+
 # contains global secrets, gitignored from dotfiles
 source ~/dev/open-source/dotfiles/secrets.sh
 

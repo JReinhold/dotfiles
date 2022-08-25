@@ -48,9 +48,6 @@ brewi the_silver_searcher bat fzf tig jq
 brewi mackup
 
 # Zsh Shell
-brewi zsh
-echo "/usr/local/bin/zsh" | sudo tee -a /etc/shells
-chsh -s $(which zsh)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 #  symlink Zsh configuration to this directory
 rm ~/.zshrc
@@ -58,3 +55,6 @@ ln -s $PWD/.zshrc ~/.zshrc
 
 # asdf CLI
 ln -s $PWD/.tool-versions ~/.tool-versions
+
+# Make "python" point to "python3"
+PATH="/usr/local/opt/python/libexec/bin:$PATH"
