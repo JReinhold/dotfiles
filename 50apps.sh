@@ -63,6 +63,10 @@ caski messenger
 # https://slack.com
 caski slack
 
+# Discord - Messaging app
+# https://discord.com
+caski discord
+
 # Figma - Webbased vector app
 # https://figma.com
 caski figma
@@ -74,10 +78,6 @@ caski spotify
 # Warp - terminal
 # https://warp.dev
 caski warp
-
-# Postman - API-tester
-# https://postman.com
-caski postman
 
 # OpenJDK - Java Development Kit, needed for Android SDK
 # caski temurin

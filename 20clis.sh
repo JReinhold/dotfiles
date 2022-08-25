@@ -13,7 +13,9 @@ brewi terminal-notifier
 brewi wget
 
 # dockutil - CLI to manage dock items
-brewi dockutil
+# brewi dockutil
+# temporary workaround https://github.com/kcrawford/dockutil/issues/127#issuecomment-1118733013
+caski hpedrorodrigues/tools/dockutil
 
 # duti - default applications manager
 brewi duti
@@ -21,8 +23,9 @@ brewi duti
 # 1Password CLI - Password manager
 caski 1password/tap/1password-cli
 
-# colima - an alternative to Docker Desktop
+# colima + docker - an alternative to Docker Desktop
 # https://www.swyx.io/running-docker-without-docker-desktop/
+brewi docker
 brewi colima
 sudo curl -L https://github.com/docker/compose/releases/download/v2.9.0/docker-compose-darwin-aarch64 -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
@@ -47,7 +50,7 @@ brewi the_silver_searcher bat fzf tig jq
 # mackup - tool for backing up and restoring application preferences
 brewi mackup
 
-# Zsh Shell
+# Oh My Zsh Shell
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 #  symlink Zsh configuration to this directory
 rm ~/.zshrc

@@ -83,7 +83,7 @@ alias pop='yes | ./manage.py populate_db'
 
 # Node version switcher
 # See https://notiz.dev/blog/how-to-manage-multiple-node-versions-on-mac
-alias node18='export PATH="/usr/local/opt/node@18/bin:$PATH"'
-alias node16='export PATH="/usr/local/opt/node@16/bin:$PATH"'
-alias node14='export PATH="/usr/local/opt/node@14/bin:$PATH"'
+alias node18='export PATH="/opt/homebrew/opt/node@18/bin:$PATH"'
+alias node16='export PATH="/opt/homebrew/opt/node@16/bin:$PATH"'
+alias node14='export PATH="/opt/homebrew/opt/node@14/bin:$PATH"'
 
