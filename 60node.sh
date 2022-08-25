@@ -8,8 +8,10 @@ announce "Installing Node.js and tools"
 
 # install node.js LTS with npm - JavaScript runner and package manager
 brewi node@18
+brewi node@16
+brewi node@14
 corepack enable
-corepack prepare pnpm@7.8.0 --activate
+corepack prepare pnpm@7.9.5 --activate
 npm update -g npm
 
 # ESLint - To lint JavaScript files

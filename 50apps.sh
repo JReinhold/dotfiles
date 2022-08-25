@@ -63,6 +63,10 @@ caski messenger
 # https://slack.com
 caski slack
 
+# Discord - Messaging app
+# https://discord.com
+caski discord
+
 # Figma - Webbased vector app
 # https://figma.com
 caski figma
