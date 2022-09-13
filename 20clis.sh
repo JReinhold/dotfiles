@@ -58,3 +58,6 @@ ln -s $PWD/.zshrc ~/.zshrc
 
 # asdf CLI
 ln -s $PWD/.tool-versions ~/.tool-versions
+
+# Make "python" point to "python3"
+PATH="/usr/local/opt/python/libexec/bin:$PATH"

@@ -154,7 +154,7 @@ brewi chromium
 # caski microsoft-teams
 
 # Quicklook extensions - different extensions to the native quicklook to make it better with different file types
-caski qlcolorcode qlmarkdown quicklook-json webpquicklook qlvideo
+caski qlcolorcode qlmarkdown quicklook-json webpquicklook
 defaults write org.n8gray.QLColorCode hlTheme base16/solarized-dark
 
 ########################################
@@ -164,10 +164,6 @@ announce "Installing Mac App Store apps"
 
 # Keynote
 mas install 409183694
-# Pages
-mas install 409201541
-# Numbers
-mas install 409203825
 
 # Xcode - Apple Development tools - BEWARE, TAKES A LONG TIME!!
 #mas install 497799835

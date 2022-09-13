@@ -17,9 +17,7 @@ opsignin(){
 }
 opsignin
 
-# Add Fontawesome Pro NPM token to env variables
-FONTAWSOME_NPM_TOKEN=$('op read "op://Personal/Fontawesome Pro NPM Token/license key" --session $OP_SESSION')
-echo "export FONTAWESOME_NPM_TOKEN=${FONTAWSOME_NPM_TOKEN}" >> secrets.sh
+touch secrets.sh
 chmod 755 secrets.sh
 
 # Add SSH keys
