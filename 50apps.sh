@@ -31,6 +31,10 @@ caski raycast
 # https://centered.app
 caski centered
 
+# Linear - Project management
+# https://linear.app
+caski linear-linear
+
 # Logitech Options - configure Logiceh peripherals
 # https://www.logitech.com/en-us/product/options
 caski logitech-options
@@ -137,6 +141,9 @@ caski handbrake
 # Transmission - torrent downloader
 # https://transmissionbt.com
 caski transmission
+
+# Chromium
+brewi chromium
 
 # Microsoft 365 suite - NEEDS LICENSE
 # https://www.microsoft.com/da-dk/microsoft-365/mac/microsoft-365-for-mac

@@ -9,6 +9,14 @@ export ZSH=$HOME/.oh-my-zsh
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="agnoster"
 
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
+  autoload -Uz compinit
+  compinit
+fi
+
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
 # cause zsh load theme from this variable instead of
@@ -149,7 +157,16 @@ source ~/dev/open-source/dotfiles/secrets.sh
 # add 1Password CLI completion
 eval "$(op completion zsh)"; compdef _op op
 
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/zsh_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/zsh_completion.d/nvm"  # This loads nvm bash_completion
+
 # pnpm
 export PNPM_HOME="/Users/jeppe/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
-# pnpm end
+
+# make puppeteer use chromium instead of Chrome
+export CHROME_PATH=`which chromium`
+export PUPPETEER_EXECUTABLE_PATH=`which chromium`
+export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=1
