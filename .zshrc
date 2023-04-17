@@ -173,3 +173,13 @@ export PATH="$PNPM_HOME:$PATH"
 export CHROME_PATH=`which chromium`
 export PUPPETEER_EXECUTABLE_PATH=`which chromium`
 export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=1
+
+# Work related aliases
+
+alias compile="yarn task --task compile --start-from=install"
+alias ui="yarn storybook:ui --no-open"
+
+# expose DOCKER_HOST from colima
+# from https://github.com/nektos/act/issues/1051#issuecomment-1340342410
+
+export DOCKER_HOST="$(docker context inspect colima | jq -r '.[0].Endpoints.docker.Host')"

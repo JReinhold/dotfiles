@@ -82,6 +82,8 @@ caski spotify
 # Warp - terminal
 # https://warp.dev
 caski warp
+mkdir -p ~/.warp/themes
+cp $PWD/warp-theme-github-dark.yaml ~/.warp/themes/github_dark.yaml
 
 # OpenJDK - Java Development Kit, needed for Android SDK
 # caski temurin
