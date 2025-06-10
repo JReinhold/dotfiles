@@ -9,12 +9,11 @@ export ZSH=$HOME/.oh-my-zsh
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="agnoster"
 
-if type brew &>/dev/null
-then
-  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
-
-  autoload -Uz compinit
-  compinit
+autoload -Uz compinit
+if [ "$(date +'%j')" != "$(stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)" ]; then
+    compinit
+else
+    compinit -C
 fi
 
 # Set list of themes to load
@@ -35,7 +34,7 @@ fi
 # DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+export UPDATE_ZSH_DAYS=60
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -68,8 +67,6 @@ ZSH_CUSTOM=~/dev/open-source/dotfiles/oh-my-custom-zsh
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   asdf
-  docker
-  docker-compose
   frontend-search
   fzf
   git
@@ -79,7 +76,6 @@ plugins=(
   sudo
   timer
   vscode
-  web-search
   z
   zsh-completions
   zsh-autosuggestions
@@ -174,12 +170,16 @@ export CHROME_PATH=`which chromium`
 export PUPPETEER_EXECUTABLE_PATH=`which chromium`
 export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=1
 
-# Work related aliases
-
-alias compile="yarn task --task compile --start-from=install"
-alias ui="yarn storybook:ui --no-open"
-
 # expose DOCKER_HOST from colima
 # from https://github.com/nektos/act/issues/1051#issuecomment-1340342410
 
 export DOCKER_HOST="$(docker context inspect colima | jq -r '.[0].Endpoints.docker.Host')"
+
+export STORYBOOK_TELEMETRY_URL="http://localhost:6007/event-log"
+export SKIP_STORYBOOK_GIT_HOOKS=true
+
+# fnm
+export PATH="/Users/jeppe/Library/Application Support/fnm:$PATH"
+export FNM_COREPACK_ENABLED="true"
+eval "$(fnm env --use-on-cd --shell zsh)"
+eval "$(fnm completions --shell zsh)"

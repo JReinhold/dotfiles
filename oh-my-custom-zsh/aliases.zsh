@@ -31,7 +31,7 @@ alias mergepdf='/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/Re
 alias afk='open -a ScreenSaverEngine'
 
 # Use bat instead of cat
-alias cat=bat
+alias cat="bat --paging=never" 
 
 # fuzzy search a file, open it in VSCode
 alias fzfo='fzf | xargs -o code'
@@ -77,13 +77,64 @@ alias dev='./manage.py runserver & ./manage.py livereload && fg'
 alias pop='yes | ./manage.py populate_db'
 
 
-##########
+##############
 # JavaScript #
-##########
+##############
 
-# Node version switcher
-# See https://notiz.dev/blog/how-to-manage-multiple-node-versions-on-mac
-alias node18='export PATH="/opt/homebrew/opt/node@18/bin:$PATH"'
-alias node16='export PATH="/opt/homebrew/opt/node@16/bin:$PATH"'
-alias node14='export PATH="/opt/homebrew/opt/node@14/bin:$PATH"'
+#############
+# Storybook #
+#############
 
+alias compile='yarn --cwd $HOME/dev/work/storybook/storybook/code task --task compile --start-from install'
+alias sand='yarn --cwd $HOME/dev/work/storybook/storybook/code task --start-from sandbox --task sandbox --template'
+alias build='yarn --cwd $HOME/dev/work/storybook/storybook/code build'
+alias buildw='yarn --cwd $HOME/dev/work/storybook/storybook/code build --watch'
+alias ui='yarn --cwd $HOME/dev/work/storybook/storybook/code storybook:ui --no-open'
+alias sbcli='$HOME/dev/work/storybook/storybook/code/lib/cli/bin/index.js'
+alias book='nr storybook --no-open'
+alias servebook='npx http-serve storybook-static -c-1h'
+alias sbs='nr build-storybook && npx http-serve storybook-static -c-1h'
+alias playground='ssh -i ~/.ssh/chroma-oregon.pem -L 5901:localhost:5901 -C chromatic@35.155.91.170'
+function c() {
+    cursor "${1:-.}"
+}
+function canary() {
+  # Determine PR number if not provided
+  if [[ -z "$1" ]]; then
+    echo "🔍 No PR number provided — searching for PR linked to the current branch..."
+
+    # Find the current branch
+    local branch=$(git rev-parse --abbrev-ref HEAD)
+
+    # Use GitHub CLI to find an associated PR
+    local pr_number=$(gh pr list --head "$branch" --limit 1 --json number -q ".[0].number")
+
+    if [[ -z "$pr_number" ]]; then
+      echo "❌ No PR found for branch '$branch'."
+      return 1
+    fi
+
+    echo "✅ Found PR: #$pr_number"
+  else
+    local pr_number="$1"
+  fi
+
+  # Trigger the workflow
+  gh workflow run --repo storybookjs/storybook canary-release-pr.yml --field pr="$pr_number"
+  echo "\n🚀 Preparing canary for PR https://github.com/storybookjs/storybook/pull/$pr_number"
+
+  # Wait a moment to ensure the workflow registers
+  sleep 3
+
+  # Fetch the latest run ID for the "canary-release-pr.yml" workflow specifically
+  local run_id=$(gh run list --repo storybookjs/storybook --workflow canary-release-pr.yml --limit 1 --json databaseId -q ".[0].databaseId")
+
+  echo "🛠️ Run ID: $run_id"
+  if [[ -z "$run_id" ]]; then
+    echo "❌ Failed to get run ID."
+    return 1
+  fi
+
+  # Watch only this specific run
+  gh run watch $run_id --repo storybookjs/storybook
+}

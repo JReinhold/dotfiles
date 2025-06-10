@@ -6,31 +6,34 @@
 source ./05functions.sh
 announce "Installing Node.js and tools"
 
-# install nvm - Node Version Manager
-brewi nvm
+# install fnm - Fast Node Manager
+curl -fsSL https://fnm.vercel.app/install | bash
 
-# install node.js LTS with npm - JavaScript runner and package manager
-nvm install node
-nvm install 16
-nvm install 14
-nvm alias default 14
+# install Node.js
+fnm install --lts
+fnm install --latest
+fnm install 18
+fnm default 18
 
 npm update -g npm
 
 brewi yarn
-brewi pnpm
 
-pnpm add --global corepack
+corepack enable pnpm
+corepack enable yarn
+
+# ni - use the right package manager
+npm install --global @antfu/ni
 
 # ESLint - To lint JavaScript files
-pnpm add --global eslint
+npm install --global eslint
 
 # Prettier - format files
-pnpm add --global prettier
+npm install --global prettier
 
 # Serve - To create a minimalistisk http server local
-pnpm add --global serve
+npm install --global serve
 
 # TypeScript compiler
-pnpm add --global typescript
+npm install --global typescript
 
