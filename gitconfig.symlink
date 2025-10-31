@@ -26,3 +26,5 @@
 	undo = reset --soft HEAD~
 [pull]
 	rebase = false
+[pack]
+	window = 1

@@ -175,11 +175,12 @@ export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=1
 
 export DOCKER_HOST="$(docker context inspect colima | jq -r '.[0].Endpoints.docker.Host')"
 
+export STORYBOOK_DISABLE_TELEMETRY="true"
 export STORYBOOK_TELEMETRY_URL="http://localhost:6007/event-log"
 export SKIP_STORYBOOK_GIT_HOOKS=true
 
 # fnm
 export PATH="/Users/jeppe/Library/Application Support/fnm:$PATH"
 export FNM_COREPACK_ENABLED="true"
-eval "$(fnm env --use-on-cd --shell zsh)"
+eval "$(fnm env --use-on-cd --shell zsh --version-file-strategy recursive)"
 eval "$(fnm completions --shell zsh)"

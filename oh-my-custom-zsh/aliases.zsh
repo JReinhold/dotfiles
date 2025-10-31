@@ -90,14 +90,18 @@ alias sand='yarn --cwd $HOME/dev/work/storybook/storybook/code task --start-from
 alias build='yarn --cwd $HOME/dev/work/storybook/storybook/code build'
 alias buildw='yarn --cwd $HOME/dev/work/storybook/storybook/code build --watch'
 alias ui='yarn --cwd $HOME/dev/work/storybook/storybook/code storybook:ui --no-open'
-alias sbcli='$HOME/dev/work/storybook/storybook/code/lib/cli/bin/index.js'
+alias sbcli='$HOME/dev/work/storybook/storybook/code/core/bin/index.js'
 alias book='nr storybook --no-open'
-alias servebook='npx http-serve storybook-static -c-1h'
-alias sbs='nr build-storybook && npx http-serve storybook-static -c-1h'
+alias servebook='npx --yes http-server storybook-static -c-1'
+alias sbs='nr build-storybook && npx --yes http-server storybook-static -c-1'
 alias playground='ssh -i ~/.ssh/chroma-oregon.pem -L 5901:localhost:5901 -C chromatic@35.155.91.170'
 function c() {
     cursor "${1:-.}"
 }
+function kp() {
+  kill -9 $(lsof -t -i:${1:-6001})
+}
+
 function canary() {
   # Determine PR number if not provided
   if [[ -z "$1" ]]; then
@@ -120,14 +124,14 @@ function canary() {
   fi
 
   # Trigger the workflow
-  gh workflow run --repo storybookjs/storybook canary-release-pr.yml --field pr="$pr_number"
+  gh workflow run --repo storybookjs/storybook publish.yml --field pr="$pr_number"
   echo "\n🚀 Preparing canary for PR https://github.com/storybookjs/storybook/pull/$pr_number"
 
   # Wait a moment to ensure the workflow registers
   sleep 3
 
-  # Fetch the latest run ID for the "canary-release-pr.yml" workflow specifically
-  local run_id=$(gh run list --repo storybookjs/storybook --workflow canary-release-pr.yml --limit 1 --json databaseId -q ".[0].databaseId")
+  # Fetch the latest run ID for the "publish.yml" workflow specifically
+  local run_id=$(gh run list --repo storybookjs/storybook --workflow publish.yml --limit 1 --json databaseId -q ".[0].databaseId")
 
   echo "🛠️ Run ID: $run_id"
   if [[ -z "$run_id" ]]; then
